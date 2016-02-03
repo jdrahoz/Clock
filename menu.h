@@ -2,7 +2,7 @@
  * menu.h
  *
  *  Created on: Feb 2, 2016
- *      Author: Julia Drahozal
+ *      Author: Julia Drahozal and Kate Strombom
  */
 
 #ifndef MENU_H_
@@ -10,21 +10,26 @@
 
 class Menu
 {
-
+    
 private:
-
-	int currTime=0;
-	int currMode=0;
-
+    
+    int hour;
+    int minute;
+    int second;
+    int ampm;
+    int currTime=0;
+    int currMode=0;
+    
 public:
-
-	Menu ();
-
-	void resetTime (int newTime);
-	void changeMode (int newMode);
-
-	~Menu ();
-
+    
+    Menu ();
+    
+    void callMenu ();
+    void resetTime (int oldTime);
+    void changeMode ();
+    
+    ~Menu ();
+    
 };
 
 #endif /* MENU_H_ */
