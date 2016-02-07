@@ -2,6 +2,7 @@
 
 
 #include <QtWidgets>
+#include <QtGui>
 
 #include "clock.h"
 
@@ -22,9 +23,9 @@ Clock::Clock(QWidget *parent)
 
 void Clock::showTime()
 {
-    QTime time = QTime::currentTime();
-    QString text = time.toString("hh:mm:ss");
-    if ((time.second() % 2) == 0)
-        text[2] = ' ';
+
+    QTime time = QTime::currentTime();//need to fix further
+    setDigitCount(8);
+    QString text = time.toString(Qt::TextDate);
     display(text);
 }
