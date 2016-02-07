@@ -1,35 +1,16 @@
-/*
- * menu.h
- *
- *  Created on: Feb 2, 2016
- *      Author: Julia Drahozal and Kate Strombom
- */
+#ifndef MENU_H
+#define MENU_H
 
-#ifndef MENU_H_
-#define MENU_H_
 
-class Menu
+class Menu : public QWidget
 {
-    
-private:
-    
-    int hour;
-    int minute;
-    int second;
-    int ampm;
-    int currTime=0;
-    int currMode=0;
-    
+    Q_OBJECT
 public:
-    
-    Menu ();
-    
-    void callMenu ();
-    void resetTime (int oldTime);
-    void changeMode ();
-    
-    ~Menu ();
-    
+    explicit Menu(QWidget *parent = 0);
+
+signals:
+
+public slots:
 };
 
-#endif /* MENU_H_ */
+#endif // MENU_H

@@ -1,7 +1,7 @@
 // source : http://doc.qt.io/qt-5/qtwidgets-widgets-digitalclock-example.html
 
 
-#include <QtWidgets>
+//#include <QtWidgets>
 #include <QtGui>
 
 #include "clock.h"
@@ -18,14 +18,14 @@ Clock::Clock(QWidget *parent)
     showTime();
 
     setWindowTitle(tr("Clock"));
-    resize(300, 60);
+    resize(450, 60);
 }
 
 void Clock::showTime()
 {
 
     QTime time = QTime::currentTime();//need to fix further
-    setDigitCount(8);
-    QString text = time.toString(Qt::TextDate);
+    setDigitCount(11);
+    QString text = time.toString("hh:mm:ss:tt");
     display(text);
 }
