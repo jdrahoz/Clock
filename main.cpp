@@ -1,20 +1,13 @@
-/*
- * main.cpp
- *
- *  Created on: Feb 2, 2016
- *      Author: Julia Drahozal and Kate Strombom
- */
+// source : http://doc.qt.io/qt-5/qtwidgets-widgets-digitalclock-example.html
 
-#include <iostream>
-using namespace std;
-#include "menu.h"
+#include <QApplication>
 
-int main () {
-    
-    Menu* menu = new Menu ();
-    
-    delete menu;
-    
-    return 0;
-};
+#include "clock.h"
 
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    Clock clock;
+    clock.show();
+    return app.exec();
+}

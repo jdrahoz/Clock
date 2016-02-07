@@ -1,6 +1,7 @@
 // source : http://doc.qt.io/qt-5/qtwidgets-widgets-digitalclock-example.html
 
 
+#include <QtWidgets>
 #include <QtGui>
 
 #include "clock.h"
@@ -22,10 +23,9 @@ Clock::Clock(QWidget *parent)
 
 void Clock::showTime()
 {
+
     QTime time = QTime::currentTime();//need to fix further
     setDigitCount(8);
     QString text = time.toString(Qt::TextDate);
-    if ((time.second() % 2) == 0)
-        text[2] = ' ';
     display(text);
 }
