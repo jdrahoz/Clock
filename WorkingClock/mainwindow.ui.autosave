@@ -136,7 +136,7 @@
       <string>Clear Time</string>
      </property>
     </widget>
-    <widget class="QLabel" name="Digital_Clock">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -203,6 +203,22 @@
     <hint type="destinationlabel">
      <x>348</x>
      <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>highlighted(QString)</signal>
+   <receiver>Display</receiver>
+   <slot>display(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>481</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>103</y>
     </hint>
    </hints>
   </connection>

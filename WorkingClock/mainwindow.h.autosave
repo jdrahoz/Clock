@@ -29,6 +29,8 @@ private slots:
 
     void on_lineEdit_windowIconTextChanged(const QString &iconText);
 
+    void on_comboBox_2_currentIndexChanged(const QString &arg1);
+    
 private:
     Ui::MainWindow *ui;
 };
