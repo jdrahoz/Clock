@@ -20,15 +20,15 @@ public:
 private slots:
 
 //    void on_checkBox_2_clicked();
-
-//    void showTime();
-
 //    void on_comboBox_2_activated(const QString &arg1);
 
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
+    // clock methods
+    void clockInit ();
+    void timerInit ();
     void setTime (QTime newTime);
     void setMode (int newMode);
     void showTime ();
@@ -36,7 +36,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    // clock member variables
     QTime currTime;
+    QTimer* timer;
     int currMode; // 0= 24, 1= 12
     int ampm; // -1= N/A, 0= am, 1= pm
 };

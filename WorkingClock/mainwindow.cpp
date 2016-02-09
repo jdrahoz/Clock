@@ -8,10 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->Display->setSegmentStyle (QLCDNumber::Filled);
-    ui->Display->setDigitCount (11);
-    setMode (0); // 24 hour
-    setTime (QTime(0, 0, 0)); // midnight
+    clockInit ();
+    timerInit ();
+
 
 
 }
@@ -39,36 +38,19 @@ void MainWindow::on_pushButton_clicked()
 {
 
     // update time display every second
-    QTimer *timer = new QTimer (this);
-    connect (timer, SIGNAL (timeout()), this, SLOT (updateTime()));
-    connect (timer, SIGNAL (timeout()), this, SLOT (showTime()));
     timer -> start (1000);
     showTime ();
 
-//    QTime time = QTime::currentTime();
-//    int seconds = QTime(0,0,0).secsTo(time);
-
-//    //begin calculations for time_string
-//    int minutes = seconds/60;
-//    int hours = minutes/60;
-//    minutes = minutes%60;
-//    seconds = seconds%60;
-//    QString hours_string = QString::number(hours);
-//    QString minutes_string = QString::number(minutes);
-//    QString seconds_string = QString::number(seconds);
-//    QString time_string = hours_string + ":" + minutes_string + ":" + seconds_string;
-//    //time_string is a string that displays hh:mm:ss of current time.
-
-//    ui->Display->setDigitCount(8);
-//    ui->Display->digitCount();
-//    ui->Display->display(time_string);//displays time in form of a string.
-
 }
 
-////clears the digital display
+//clears the digital display
 void MainWindow::on_pushButton_2_clicked()
 {
-    ui->Display->display(000000);
+
+    timer -> stop ();
+    setTime (QTime (0,0,0));
+    showTime ();
+
 }
 
 void MainWindow::showTime ()
@@ -80,7 +62,7 @@ void MainWindow::showTime ()
     {
         ui->Display->setDigitCount (8);
     } else if (currMode == 1) {
-        ui->Display->setDigitCount (11);
+        ui->Display->setDigitCount (10);
         if (ampm == 0)
         {
             textTime = textTime + " A";
@@ -92,6 +74,28 @@ void MainWindow::showTime ()
     ui->Display->display (textTime);
 
 }
+
+void MainWindow::clockInit ()
+{
+
+    // set up clock display
+    ui->Display->setSegmentStyle (QLCDNumber::Filled);
+    setMode (1); // 24 hour
+    setTime (QTime(0, 0, 0)); // midnight
+    showTime ();
+
+}
+
+void MainWindow::timerInit ()
+{
+
+    // set up timer
+    timer = new QTimer (this);
+    connect (timer, SIGNAL (timeout()), this, SLOT (updateTime()));
+    connect (timer, SIGNAL (timeout()), this, SLOT (showTime()));
+
+}
+
 
 void MainWindow::setTime (QTime newTime)
 {
