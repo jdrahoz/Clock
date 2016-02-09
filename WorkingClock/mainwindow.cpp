@@ -18,17 +18,23 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//Time updates only when button is clicked, needs to update continuously.
+// updates the digital display
 void MainWindow::on_update_clicked()
 {
 
     // update time display every second
+    QString timeStr = ui->timeEdit->text ();
+    int hour = (timeStr.split("")[0].toInt() * 10) + (timeStr.split ("")[1].toInt ());
+    int min = 23;
+    int sec = 12;
+
+    setTime (QTime(hour, min, sec));
     timer -> start (1000);
     showTime ();
 
 }
 
-//clears the digital display
+// clears the digital display
 void MainWindow::on_reset_clicked()
 {
 
@@ -38,6 +44,7 @@ void MainWindow::on_reset_clicked()
 
 }
 
+// shows time on digital display
 void MainWindow::showTime ()
 {
 
