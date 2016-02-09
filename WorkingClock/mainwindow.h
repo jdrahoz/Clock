@@ -22,9 +22,9 @@ private slots:
 //    void on_checkBox_2_clicked();
 //    void on_comboBox_2_activated(const QString &arg1);
 
-    void on_pushButton_clicked();
+    void on_update_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_reset_clicked();
 
     // clock methods
     void clockInit ();

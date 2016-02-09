@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[12];
-    char stringdata0[130];
+    char stringdata0[119];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,23 +30,23 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 33, 0), // ""
-QT_MOC_LITERAL(3, 34, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(4, 58, 9), // "clockInit"
-QT_MOC_LITERAL(5, 68, 9), // "timerInit"
-QT_MOC_LITERAL(6, 78, 7), // "setTime"
-QT_MOC_LITERAL(7, 86, 7), // "newTime"
-QT_MOC_LITERAL(8, 94, 7), // "setMode"
-QT_MOC_LITERAL(9, 102, 7), // "newMode"
-QT_MOC_LITERAL(10, 110, 8), // "showTime"
-QT_MOC_LITERAL(11, 119, 10) // "updateTime"
+QT_MOC_LITERAL(1, 11, 17), // "on_update_clicked"
+QT_MOC_LITERAL(2, 29, 0), // ""
+QT_MOC_LITERAL(3, 30, 16), // "on_reset_clicked"
+QT_MOC_LITERAL(4, 47, 9), // "clockInit"
+QT_MOC_LITERAL(5, 57, 9), // "timerInit"
+QT_MOC_LITERAL(6, 67, 7), // "setTime"
+QT_MOC_LITERAL(7, 75, 7), // "newTime"
+QT_MOC_LITERAL(8, 83, 7), // "setMode"
+QT_MOC_LITERAL(9, 91, 7), // "newMode"
+QT_MOC_LITERAL(10, 99, 8), // "showTime"
+QT_MOC_LITERAL(11, 108, 10) // "updateTime"
 
     },
-    "MainWindow\0on_pushButton_clicked\0\0"
-    "on_pushButton_2_clicked\0clockInit\0"
-    "timerInit\0setTime\0newTime\0setMode\0"
-    "newMode\0showTime\0updateTime"
+    "MainWindow\0on_update_clicked\0\0"
+    "on_reset_clicked\0clockInit\0timerInit\0"
+    "setTime\0newTime\0setMode\0newMode\0"
+    "showTime\0updateTime"
 };
 #undef QT_MOC_LITERAL
 
@@ -92,8 +92,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->on_update_clicked(); break;
+        case 1: _t->on_reset_clicked(); break;
         case 2: _t->clockInit(); break;
         case 3: _t->timerInit(); break;
         case 4: _t->setTime((*reinterpret_cast< QTime(*)>(_a[1]))); break;

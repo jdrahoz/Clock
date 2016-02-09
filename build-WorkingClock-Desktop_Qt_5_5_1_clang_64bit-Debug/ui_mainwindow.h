@@ -13,16 +13,19 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,12 +35,23 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QFrame *frame;
+    QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_4;
     QLCDNumber *Display;
-    QComboBox *comboBox;
-    QComboBox *comboBox_2;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer_5;
+    QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout;
+    QCheckBox *am;
+    QSpacerItem *horizontalSpacer;
+    QCheckBox *mode;
+    QSpacerItem *horizontalSpacer_2;
+    QLineEdit *timeEdit;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *update;
+    QSpacerItem *verticalSpacer_3;
+    QPushButton *reset;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -46,41 +60,103 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1213, 748);
+        MainWindow->resize(750, 500);
+        MainWindow->setMaximumSize(QSize(1000, 1000));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(0, 0, 541, 351));
+        frame->setGeometry(QRect(0, 0, 751, 451));
+        frame->setStyleSheet(QStringLiteral("background-color: rgb(41, 97, 45);"));
+        verticalLayout = new QVBoxLayout(frame);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalSpacer = new QSpacerItem(20, 66, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_4);
+
         Display = new QLCDNumber(frame);
         Display->setObjectName(QStringLiteral("Display"));
         Display->setEnabled(true);
-        Display->setGeometry(QRect(0, 0, 371, 111));
+        Display->setMinimumSize(QSize(371, 111));
         Display->setMouseTracking(false);
         Display->setFrameShape(QFrame::Box);
         Display->setLineWidth(9);
         Display->setMidLineWidth(0);
         Display->setSmallDecimalPoint(false);
-        comboBox = new QComboBox(frame);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setEnabled(true);
-        comboBox->setGeometry(QRect(440, 10, 81, 29));
-        comboBox_2 = new QComboBox(frame);
-        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
-        comboBox_2->setGeometry(QRect(440, 50, 81, 29));
-        lineEdit = new QLineEdit(frame);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(410, 90, 113, 29));
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(420, 140, 90, 31));
-        pushButton_2 = new QPushButton(frame);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(420, 180, 90, 31));
+
+        horizontalLayout_2->addWidget(Display);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_5);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        verticalSpacer_2 = new QSpacerItem(20, 66, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        am = new QCheckBox(frame);
+        am->setObjectName(QStringLiteral("am"));
+
+        horizontalLayout->addWidget(am);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        mode = new QCheckBox(frame);
+        mode->setObjectName(QStringLiteral("mode"));
+
+        horizontalLayout->addWidget(mode);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+        timeEdit = new QLineEdit(frame);
+        timeEdit->setObjectName(QStringLiteral("timeEdit"));
+
+        horizontalLayout->addWidget(timeEdit);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_3);
+
+        update = new QPushButton(frame);
+        update->setObjectName(QStringLiteral("update"));
+
+        horizontalLayout->addWidget(update);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        verticalSpacer_3 = new QSpacerItem(20, 66, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_3);
+
+        reset = new QPushButton(frame);
+        reset->setObjectName(QStringLiteral("reset"));
+
+        verticalLayout->addWidget(reset);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1213, 22));
+        menuBar->setGeometry(QRect(0, 0, 750, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -90,8 +166,8 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);
-        QObject::connect(pushButton_2, SIGNAL(clicked()), Display, SLOT(setDecMode()));
-        QObject::connect(lineEdit, SIGNAL(selectionChanged()), Display, SLOT(setDecMode()));
+        QObject::connect(reset, SIGNAL(clicked()), Display, SLOT(setDecMode()));
+        QObject::connect(timeEdit, SIGNAL(selectionChanged()), Display, SLOT(setDecMode()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -102,19 +178,11 @@ public:
 #ifndef QT_NO_TOOLTIP
         Display->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\\</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "AM", 0)
-         << QApplication::translate("MainWindow", "PM", 0)
-        );
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "24 Hour", 0)
-         << QApplication::translate("MainWindow", "12 Hour", 0)
-        );
-        lineEdit->setText(QApplication::translate("MainWindow", "hhmmss", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Start Time", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Clear Time", 0));
+        am->setText(QApplication::translate("MainWindow", "AM", 0));
+        mode->setText(QApplication::translate("MainWindow", "24 Hour", 0));
+        timeEdit->setText(QApplication::translate("MainWindow", "hhmmss", 0));
+        update->setText(QApplication::translate("MainWindow", "Update", 0));
+        reset->setText(QApplication::translate("MainWindow", "Reset", 0));
     } // retranslateUi
 
 };

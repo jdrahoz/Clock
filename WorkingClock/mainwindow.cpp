@@ -11,8 +11,6 @@ MainWindow::MainWindow(QWidget *parent) :
     clockInit ();
     timerInit ();
 
-
-
 }
 
 MainWindow::~MainWindow()
@@ -20,21 +18,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//void MainWindow::on_checkBox_2_clicked()
-//{
-
-//}
-
-
-
-//void MainWindow::on_comboBox_2_activated(const QString &arg1)
-//{
-
-//}
-
-
 //Time updates only when button is clicked, needs to update continuously.
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_update_clicked()
 {
 
     // update time display every second
@@ -44,7 +29,7 @@ void MainWindow::on_pushButton_clicked()
 }
 
 //clears the digital display
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_reset_clicked()
 {
 
     timer -> stop ();
