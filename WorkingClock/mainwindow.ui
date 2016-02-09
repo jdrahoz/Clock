@@ -167,6 +167,9 @@
          <property name="text">
           <string>hhmmss</string>
          </property>
+         <property name="maxLength">
+          <number>6</number>
+         </property>
         </widget>
        </item>
        <item>

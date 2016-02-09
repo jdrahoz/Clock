@@ -24,9 +24,9 @@ void MainWindow::on_update_clicked()
 
     // update time display every second
     QString timeStr = ui->timeEdit->text ();
-    int hour = (timeStr.split("")[0].toInt() * 10) + (timeStr.split ("")[1].toInt ());
-    int min = 23;
-    int sec = 12;
+    int hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
+    int min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
+    int sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
 
     setTime (QTime(hour, min, sec));
     timer -> start (1000);

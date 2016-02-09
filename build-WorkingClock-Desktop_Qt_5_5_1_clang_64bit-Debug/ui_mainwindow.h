@@ -129,6 +129,7 @@ public:
 
         timeEdit = new QLineEdit(frame);
         timeEdit->setObjectName(QStringLiteral("timeEdit"));
+        timeEdit->setMaxLength(6);
 
         horizontalLayout->addWidget(timeEdit);
 
