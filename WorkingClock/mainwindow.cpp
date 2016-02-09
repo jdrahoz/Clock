@@ -150,9 +150,9 @@ void MainWindow::updateTime ()
 
 
 //declare variables in this scope
-    int sec = currTime.second ();
-    int min = currTime.minute ();
-    int hour = currTime.hour ();
+   int sec = currTime.second ();
+   int min = currTime.minute ();
+   int hour = currTime.hour ();
 
 //if the hour turns 12 the am/pm is toggled
     if(hour == 12 && min == 0 && sec == 0)

@@ -48,6 +48,7 @@ private:
     int currMode; // 0= 24, 1= 12
     int ampm; // -1= N/A, 0= am, 1= pm
     bool mode_24hour;//true is 24, false is 12
+    //int sec,min,hour;
 
 };
 
