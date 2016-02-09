@@ -35,9 +35,14 @@ void MainWindow::on_update_clicked()
         hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
         min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
         sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
+        setTime(QTime(hour,min,sec));
+    }
+    else
+    {
+        setTime(QTime(0,0,0));
     }
 
-    setTime (QTime(hour, min, sec));
+    //setTime (QTime(hour, min, sec));
     timer -> start (1000);
     showTime ();
 
@@ -81,7 +86,7 @@ void MainWindow::clockInit ()
 
     // set up clock display
     ui->Display->setSegmentStyle (QLCDNumber::Filled);
-    setMode (1); // 24 hour
+    setMode (currMode); // 24 hour
     setTime (QTime(0, 0, 0)); // midnight
     showTime ();
 
@@ -155,3 +160,16 @@ void MainWindow::setMode(int newMode)
 
 }
 
+
+void MainWindow::on_mode_clicked()
+{
+    mode_24hour = ui->mode->isChecked();
+    if(mode_24hour == false)
+    {
+        currMode = 1;//12 hour
+    }
+    else
+    {
+        currMode = 0;//24 hour
+    }
+}

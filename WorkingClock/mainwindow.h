@@ -34,6 +34,8 @@ private slots:
     void showTime ();
     void updateTime ();
 
+    void on_mode_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -42,6 +44,7 @@ private:
     QTimer* timer;
     int currMode; // 0= 24, 1= 12
     int ampm; // -1= N/A, 0= am, 1= pm
+    bool mode_24hour;//true is 24, false is 12
 };
 
 #endif // MAINWINDOW_H
