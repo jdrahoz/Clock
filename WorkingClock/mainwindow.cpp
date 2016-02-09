@@ -23,10 +23,19 @@ void MainWindow::on_update_clicked()
 {
 
     // update time display every second
+
     QString timeStr = ui->timeEdit->text ();
-    int hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
-    int min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
-    int sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
+    int hour, min, sec = 0;
+    //check to make sure imput is valid
+    //it automatically won't allow anymore than 6 characters and if they aren't ints it doesnt display anything
+    //must make sure that the size is 6 digits and no less
+
+    if(timeStr.count() == 6)
+    {
+        hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
+        min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
+        sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
+    }
 
     setTime (QTime(hour, min, sec));
     timer -> start (1000);
