@@ -43,7 +43,7 @@ public:
     QSpacerItem *horizontalSpacer_5;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout;
-    QCheckBox *am;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer;
     QCheckBox *mode;
     QSpacerItem *horizontalSpacer_2;
@@ -60,14 +60,15 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(750, 500);
+        MainWindow->resize(835, 538);
         MainWindow->setMaximumSize(QSize(1000, 1000));
+        MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setGeometry(QRect(0, 0, 751, 451));
-        frame->setStyleSheet(QStringLiteral("background-color: rgb(41, 97, 45);"));
+        frame->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 127);"));
         verticalLayout = new QVBoxLayout(frame);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -88,6 +89,8 @@ public:
         Display->setEnabled(true);
         Display->setMinimumSize(QSize(371, 111));
         Display->setMouseTracking(false);
+        Display->setStyleSheet(QLatin1String("color: rgb(85, 255, 255);\n"
+"background-color: rgb(72, 72, 72);"));
         Display->setFrameShape(QFrame::Box);
         Display->setLineWidth(9);
         Display->setMidLineWidth(0);
@@ -109,10 +112,10 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        am = new QCheckBox(frame);
-        am->setObjectName(QStringLiteral("am"));
+        pushButton = new QPushButton(frame);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
 
-        horizontalLayout->addWidget(am);
+        horizontalLayout->addWidget(pushButton);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -120,6 +123,7 @@ public:
 
         mode = new QCheckBox(frame);
         mode->setObjectName(QStringLiteral("mode"));
+        mode->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 255);"));
 
         horizontalLayout->addWidget(mode);
 
@@ -129,6 +133,7 @@ public:
 
         timeEdit = new QLineEdit(frame);
         timeEdit->setObjectName(QStringLiteral("timeEdit"));
+        timeEdit->setStyleSheet(QStringLiteral("background-color: rgb(85, 255, 255);"));
         timeEdit->setMaxLength(6);
 
         horizontalLayout->addWidget(timeEdit);
@@ -139,6 +144,27 @@ public:
 
         update = new QPushButton(frame);
         update->setObjectName(QStringLiteral("update"));
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 127, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush);
+        QBrush brush1(QColor(85, 255, 255, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Highlight, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Highlight, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Highlight, brush1);
+        update->setPalette(palette);
+        update->setAutoFillBackground(false);
+        update->setStyleSheet(QStringLiteral("selection-background-color: rgb(85, 255, 255);"));
+        update->setAutoRepeat(false);
 
         horizontalLayout->addWidget(update);
 
@@ -151,13 +177,24 @@ public:
 
         reset = new QPushButton(frame);
         reset->setObjectName(QStringLiteral("reset"));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        reset->setPalette(palette1);
 
         verticalLayout->addWidget(reset);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 750, 22));
+        menuBar->setGeometry(QRect(0, 0, 835, 31));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -179,8 +216,8 @@ public:
 #ifndef QT_NO_TOOLTIP
         Display->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>\\</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        am->setText(QApplication::translate("MainWindow", "AM", 0));
-        mode->setText(QApplication::translate("MainWindow", "24 Hour", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Am/Pm", 0));
+        mode->setText(QApplication::translate("MainWindow", "12 Hour", 0));
         timeEdit->setText(QApplication::translate("MainWindow", "hhmmss", 0));
         update->setText(QApplication::translate("MainWindow", "Update", 0));
         reset->setText(QApplication::translate("MainWindow", "Reset", 0));

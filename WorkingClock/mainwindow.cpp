@@ -32,6 +32,8 @@ void MainWindow::on_update_clicked()
 
     if(timeStr.count() == 6)
     {
+        //NEED TO IMPLEMENT: check if its in 12 hour mode, if so time cannot exceed 12:59:59
+        //parses string into digits for hhmmss
         hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
         min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
         sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
@@ -64,10 +66,11 @@ void MainWindow::showTime ()
 
     QString textTime = currTime.toString (Qt::TextDate);
     // 12 hour
-    if (currMode == 0)
+    if (currMode == 0)//24 hour
     {
         ui->Display->setDigitCount (8);
-    } else if (currMode == 1) {
+    } else if (currMode == 1) //12 hour
+    {
         ui->Display->setDigitCount (10);
         if (ampm == 0)
         {
@@ -89,6 +92,8 @@ void MainWindow::clockInit ()
     setMode (currMode); // 24 hour
     setTime (QTime(0, 0, 0)); // midnight
     showTime ();
+    //set arbitrary am/pm
+    ampm = 0;
 
 }
 
@@ -119,8 +124,20 @@ void MainWindow::setTime (QTime newTime)
         {
             currTime = QTime (12, min, sec);
         // 1 pm
-        } else if (currTime.hour () == 13) {
+        }
+        else if (currTime.hour () == 13)
+        {
             currTime = QTime (1, min, sec);
+
+            //toggle am/pm
+            if(ampm == 0)
+            {
+                ampm = 1;
+            }
+            else
+            {
+                ampm = 0;
+            }
         }
 
     }
@@ -147,6 +164,8 @@ void MainWindow::updateTime ()
         // 1 pm
         } else if (hour == 13) {
             currTime = QTime (1, min, sec);
+
+
         }
 
     }
@@ -166,10 +185,26 @@ void MainWindow::on_mode_clicked()
     mode_24hour = ui->mode->isChecked();
     if(mode_24hour == false)
     {
-        currMode = 1;//12 hour
+        currMode = 0;//12 hour
     }
     else
     {
-        currMode = 0;//24 hour
+        currMode = 1;//24 hour
+    }
+}
+
+
+
+void MainWindow::on_pushButton_clicked()
+{
+
+    //this button toggles the value of ampm
+    if(ampm == 0)
+    {
+        ampm = 1;
+    }
+    else
+    {
+        ampm = 0;
     }
 }
