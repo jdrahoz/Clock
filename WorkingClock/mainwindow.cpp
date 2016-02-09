@@ -148,13 +148,29 @@ void MainWindow::updateTime ()
 
     currTime = currTime.addSecs (1);
 
+
+
+    int sec = currTime.second ();
+    int min = currTime.minute ();
+    int hour = currTime.hour ();
+
+
+    if(hour == 12 && min == 0 && sec == 0)
+    {
+
+        if(ampm ==1)
+        {
+            ampm = 0;
+        }
+        else
+        {
+            ampm = 1;
+        }
+    }
+
     // wrap for 12 hour time
     if (currMode == 1)
     {
-
-        int sec = currTime.second ();
-        int min = currTime.minute ();
-        int hour = currTime.hour ();
         // midnight
         if (hour == 0)
         {
@@ -164,7 +180,6 @@ void MainWindow::updateTime ()
         // 1 pm
         } else if (hour == 13) {
             currTime = QTime (1, min, sec);
-
 
         }
 
