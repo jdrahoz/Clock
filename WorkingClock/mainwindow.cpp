@@ -32,7 +32,7 @@ void MainWindow::on_update_clicked()
 
     if(timeStr.count() == 6)
     {
-        //NEED TO IMPLEMENT: check if its in 12 hour mode, if so time cannot exceed 12:59:59
+
         //parses string into digits for hhmmss
         hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
         min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
@@ -149,12 +149,12 @@ void MainWindow::updateTime ()
     currTime = currTime.addSecs (1);
 
 
-
+//declare variables in this scope
     int sec = currTime.second ();
     int min = currTime.minute ();
     int hour = currTime.hour ();
 
-
+//if the hour turns 12 the am/pm is toggled
     if(hour == 12 && min == 0 && sec == 0)
     {
 
@@ -185,6 +185,15 @@ void MainWindow::updateTime ()
 
     }
 
+    //Need to set to pm if hour is 13+
+    if(currMode == 0)
+    {
+        if(hour >= 13)
+        {
+            ampm = 1;//set to pm
+        }
+    }
+
 }
 
 void MainWindow::setMode(int newMode)
@@ -197,6 +206,7 @@ void MainWindow::setMode(int newMode)
 
 void MainWindow::on_mode_clicked()
 {
+    //mode_24 is true if checked, false if unchecked
     mode_24hour = ui->mode->isChecked();
     if(mode_24hour == false)
     {
@@ -213,7 +223,7 @@ void MainWindow::on_mode_clicked()
 void MainWindow::on_pushButton_clicked()
 {
 
-    //this button toggles the value of ampm
+    //this button toggles the value of ampm on the push
     if(ampm == 0)
     {
         ampm = 1;

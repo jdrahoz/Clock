@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>538</height>
+    <width>755</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -155,7 +155,8 @@ background-color: rgb(220, 220, 220);</string>
        <item>
         <widget class="QCheckBox" name="mode">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>12 Hour</string>
@@ -178,7 +179,8 @@ background-color: rgb(220, 220, 220);</string>
        <item>
         <widget class="QLineEdit" name="timeEdit">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          </property>
          <property name="text">
           <string>hhmmss</string>
@@ -1260,7 +1262,7 @@ background-color: rgb(220, 220, 220);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>835</width>
+     <width>755</width>
      <height>31</height>
     </rect>
    </property>

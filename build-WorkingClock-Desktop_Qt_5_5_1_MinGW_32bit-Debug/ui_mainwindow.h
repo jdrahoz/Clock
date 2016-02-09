@@ -60,7 +60,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(835, 538);
+        MainWindow->resize(755, 522);
         MainWindow->setMaximumSize(QSize(1000, 1000));
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
         centralWidget = new QWidget(MainWindow);
@@ -124,7 +124,8 @@ public:
 
         mode = new QCheckBox(frame);
         mode->setObjectName(QStringLiteral("mode"));
-        mode->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        mode->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"MS Shell Dlg 2\";"));
 
         horizontalLayout->addWidget(mode);
 
@@ -134,7 +135,8 @@ public:
 
         timeEdit = new QLineEdit(frame);
         timeEdit->setObjectName(QStringLiteral("timeEdit"));
-        timeEdit->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        timeEdit->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"MS Shell Dlg 2\";"));
         timeEdit->setMaxLength(6);
 
         horizontalLayout->addWidget(timeEdit);
@@ -387,7 +389,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 835, 31));
+        menuBar->setGeometry(QRect(0, 0, 755, 31));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
