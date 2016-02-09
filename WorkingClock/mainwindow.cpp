@@ -178,11 +178,10 @@ void MainWindow::updateTime ()
         // noon
         } else if (hour == 12) {
         // 1 pm
-        } else if (hour == 13) {
-            currTime = QTime (1, min, sec);
-
+        } else if (hour >= 13) {
+            currTime = QTime (hour - 12, min, sec);
         }
-
+        //IMPLEMENT: need to get everypossible change from 24 to 12. existing code will change 13:00:00 to 1:00:00 pm but if it is 14+ it will remain hour 14 in 12 hour.
     }
 
     //Need to set to pm if hour is 13+
