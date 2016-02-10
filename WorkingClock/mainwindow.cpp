@@ -197,31 +197,22 @@ void MainWindow::setMode(int newMode)
 void MainWindow::on_mode_clicked()
 {
 
+    int sec = currTime.second ();
+    int min = currTime.minute ();
+    int hour = currTime.hour ();
     //this block will add 12 hours to clock if it is toggled from 12 hour mode and it is pm to correctly display the 24 hour equivalent
     if(currMode == 1 && ampm == 1)
     {
-        int sec = currTime.second ();
-        int min = currTime.minute ();
-        int hour = currTime.hour ()+12;
+        hour += 12;
         if(hour >= 24)
         {
             hour = hour -24;
         }
         currTime = QTime(hour, min, sec);
     }
-    else//for some reason when I included this it stopped messing up
-    {    }
-
-    if(currMode == 0)
+    else if(currMode == 0 && hour <= 11)
     {
-        int sec = currTime.second ();
-        int min = currTime.minute ();
-        int hour = currTime.hour ();
-
-        if(hour <=11)
-        {
-            ampm = 0;
-        }
+        ampm = 0;
     }
 
 
