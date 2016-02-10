@@ -129,15 +129,6 @@ void MainWindow::setTime (QTime newTime)
         {
             currTime = QTime (1, min, sec);
 
-            //toggle am/pm
-            if(ampm == 0)
-            {
-                ampm = 1;
-            }
-            else
-            {
-                ampm = 0;
-            }
         }
 
     }
@@ -181,7 +172,7 @@ void MainWindow::updateTime ()
         } else if (hour >= 13) {
             currTime = QTime (hour - 12, min, sec);
         }
-        //IMPLEMENT: need to get everypossible change from 24 to 12. existing code will change 13:00:00 to 1:00:00 pm but if it is 14+ it will remain hour 14 in 12 hour.
+
     }
 
     //Need to set to pm if hour is 13+
@@ -205,15 +196,45 @@ void MainWindow::setMode(int newMode)
 
 void MainWindow::on_mode_clicked()
 {
+
+    //this block will add 12 hours to clock if it is toggled from 12 hour mode and it is pm to correctly display the 24 hour equivalent
+    if(currMode == 1 && ampm == 1)
+    {
+        int sec = currTime.second ();
+        int min = currTime.minute ();
+        int hour = currTime.hour ()+12;
+        if(hour >= 24)
+        {
+            hour = hour -24;
+        }
+        currTime = QTime(hour, min, sec);
+    }
+    else//for some reason when I included this it stopped messing up
+    {    }
+
+    if(currMode == 0)
+    {
+        int sec = currTime.second ();
+        int min = currTime.minute ();
+        int hour = currTime.hour ();
+
+        if(hour <=11)
+        {
+            ampm = 0;
+        }
+    }
+
+
+
     //mode_24 is true if checked, false if unchecked
     mode_24hour = ui->mode->isChecked();
     if(mode_24hour == false)
     {
-        currMode = 0;//12 hour
+        currMode = 0;//24 hour
     }
     else
     {
-        currMode = 1;//24 hour
+        currMode = 1;//12 hour
     }
 }
 
