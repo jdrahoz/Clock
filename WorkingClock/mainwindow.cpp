@@ -2,245 +2,300 @@
 #include "ui_mainwindow.h"
 #include <QTime>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
+// --------------------------------------------------------------------
+// --------------------- CONSTRUCTOR & DESTRUCTOR ---------------------
+// --------------------------------------------------------------------
 
+MainWindow::MainWindow (QWidget *parent) :
+    QMainWindow (parent),
+    ui (new Ui::MainWindow)
+{
+
+    // initialize
+    ui -> setupUi (this);
     clockInit ();
     timerInit ();
+    timer -> start (1000);
 
 }
 
-MainWindow::~MainWindow()
+MainWindow::~MainWindow ()
 {
+
+    delete timer;
     delete ui;
+
 }
 
-// updates the digital display
-void MainWindow::on_update_clicked()
+// --------------------------------------------------------------------
+// ------------------------------- INIT -------------------------------
+// --------------------------------------------------------------------
+
+// initialize digital display
+void MainWindow::clockInit ()
 {
 
-    // update time display every second
+    ui->Display->setSegmentStyle (QLCDNumber::Filled);
+    setMode (0); // 24 hour
+    setTime (QTime (0, 0, 0)); // midnight
+    ampm = 0;
+    showTime ();
 
-    QString timeStr = ui->timeEdit->text ();
-    int hour, min, sec = 0;
-    //check to make sure imput is valid
-    //it automatically won't allow anymore than 6 characters and if they aren't ints it doesnt display anything
-    //must make sure that the size is 6 digits and no less
+}
 
-    if(timeStr.count() == 6)
+// intialize timer
+void MainWindow::timerInit ()
+{
+
+    timer = new QTimer (this);
+    connect (timer, SIGNAL (timeout ()), this, SLOT (updateTime()));
+    connect (timer, SIGNAL (timeout ()), this, SLOT (showTime()));
+
+}
+
+// --------------------------------------------------------------------
+// -------------------------- EVENT HANDLERS --------------------------
+// --------------------------------------------------------------------
+
+// UPDATE: updates the digital display
+void MainWindow::on_update_clicked ()
+{
+
+    // check that clock input is valid
+    if (isValidInput ())
     {
+        // get mode from checkbox
+        // 24 hour
+        if (! (ui -> mode -> isChecked ())) {
+            setMode (0);
+            // 12 hour
+        } else {
+            setMode (1);
+        }
 
-        //parses string into digits for hhmmss
-        hour = (timeStr.at(0).digitValue ()) * 10 + timeStr.at(1).digitValue ();
-        min = (timeStr.at(2).digitValue ()) * 10 + timeStr.at(3).digitValue ();
-        sec = (timeStr.at(4).digitValue ()) * 10 + timeStr.at(5).digitValue ();
-        setTime(QTime(hour,min,sec));
-    }
-    else
-    {
-        setTime(QTime(0,0,0));
-    }
 
-    //setTime (QTime(hour, min, sec));
+        // get time from text input
+        QString timeStr = ui -> timeEdit -> text ();
+        int hour = (timeStr.at (0).digitValue ()) * 10 + timeStr.at (1).digitValue ();
+        int min = (timeStr.at (2).digitValue ()) * 10 + timeStr.at (3).digitValue ();
+        int sec = (timeStr.at (4).digitValue ()) * 10 + timeStr.at (5).digitValue ();
+
+        // get ampm from checkbox
+        if (currMode == 1 and !(hour > 12 or hour == 0)) {
+            // 12 hour
+            if (currMode == 1)
+            {
+                if (ui -> am -> isChecked ()) {
+                    ampm = 0;
+                } else {
+                    ampm = 1;
+                }
+            }
+        }
+
+        setTime (QTime (hour, min, sec));
+
+        // 24 hour
+        if (currMode == 0)
+        {
+            updateAMPM ();
+        }
+        // clear checkboxes
+        ui -> mode -> setChecked (false);
+        ui -> am -> setChecked (false);
+
+    }
+    // restart timer and display
+    timer -> start (1000);
+    showTime ();
+}
+
+// RESET: clears the digital display
+void MainWindow::on_reset_clicked ()
+{
+
+    // clear set options
+    ui -> mode -> setChecked (false);
+    ui -> am -> setChecked (false);
+    ui -> timeEdit -> setText ("000000");
+
+    // reset time and display
+    timer -> stop ();
+    setMode (0);
+    setTime (QTime (0,0,0));
     timer -> start (1000);
     showTime ();
 
 }
 
-// clears the digital display
-void MainWindow::on_reset_clicked()
-{
+// --------------------------------------------------------------------
+// --------------------------- CLOCK METHODS --------------------------
+// --------------------------------------------------------------------
 
-    timer -> stop ();
-    setTime (QTime (0,0,0));
-    showTime ();
-
-}
 
 // shows time on digital display
 void MainWindow::showTime ()
 {
 
+    // format string for display
+    wrap12hour ();
     QString textTime = currTime.toString (Qt::TextDate);
+
+    // 24 hour
+    if (currMode == 0)
+    {
+        ui -> Display -> setDigitCount (8);
+
     // 12 hour
-    if (currMode == 0)//24 hour
-    {
-        ui->Display->setDigitCount (8);
-    } else if (currMode == 1) //12 hour
-    {
-        ui->Display->setDigitCount (10);
+    } else if (currMode == 1) {
+        ui -> Display -> setDigitCount (11);
+        // am
         if (ampm == 0)
         {
-            textTime = textTime + " A";
+            textTime = textTime + " A ";
+        // pm
         } else if (ampm == 1)
         {
-            textTime = textTime + " P";
+            textTime = textTime + " P ";
         }
     }
-    ui->Display->display (textTime);
+
+    ui -> Display -> display (textTime);
 
 }
 
-void MainWindow::clockInit ()
-{
-
-    // set up clock display
-    ui->Display->setSegmentStyle (QLCDNumber::Filled);
-    setMode (currMode); // 24 hour
-    setTime (QTime(0, 0, 0)); // midnight
-    showTime ();
-    //set arbitrary am/pm
-    ampm = 0;
-
-}
-
-void MainWindow::timerInit ()
-{
-
-    // set up timer
-    timer = new QTimer (this);
-    connect (timer, SIGNAL (timeout()), this, SLOT (updateTime()));
-    connect (timer, SIGNAL (timeout()), this, SLOT (showTime()));
-
-}
-
-
+// change currTime to new time
 void MainWindow::setTime (QTime newTime)
 {
 
     currTime = newTime;
+    wrap12hour ();
 
-    // wrap for 12 hour time
+}
+
+// change currMode to new mode
+void MainWindow::setMode(int newMode)
+{
+
+    currMode = newMode;
+    wrap12hour ();
+    updateAMPM ();
+
+}
+
+// update currTime by one second
+void MainWindow::updateTime ()
+{
+
+    currTime = currTime.addSecs (1);
+    wrap12hour ();
+    updateAMPM ();
+
+}
+
+// update ampm to reflect new time
+void MainWindow::updateAMPM ()
+{
+
+    // 24 hour
+    if (currMode == 0)
+    {
+
+        // am
+        if (currTime.hour () < 12)
+        {
+            ampm = 0;
+        // pm
+        } else if (currTime.hour () >= 12) {
+            ampm = 1;
+        }
+
+    // 12 hour
+    } else if (currMode == 1) {
+
+        // 12:00 am or pm
+        if (currTime.hour () == 12 and currTime.minute () == 00 and currTime.second () == 00)
+        {
+
+            // toggle ampm
+            if (ampm == 0)
+            {
+                ampm = 1;
+            } else if (ampm == 1) {
+                ampm = 0;
+            }
+
+        }
+
+    }
+
+}
+
+// in 12 hour mode, wrap for pm and midnight
+void MainWindow::wrap12hour ()
+{
+
     if (currMode == 1)
     {
 
         int sec = currTime.second ();
         int min = currTime.minute ();
-        // midnight
-        if (currTime.hour () == 0)
-        {
-            currTime = QTime (12, min, sec);
-        // 1 pm
-        }
-        else if (currTime.hour () == 13)
-        {
-            currTime = QTime (1, min, sec);
+        int hour = currTime.hour ();
 
-        }
-
-    }
-}
-
-void MainWindow::updateTime ()
-{
-
-    currTime = currTime.addSecs (1);
-
-
-//declare variables in this scope
-   int sec = currTime.second ();
-   int min = currTime.minute ();
-   int hour = currTime.hour ();
-
-//if the hour turns 12 the am/pm is toggled
-    if(hour == 12 && min == 0 && sec == 0)
-    {
-
-        if(ampm ==1)
-        {
-            ampm = 0;
-        }
-        else
-        {
+        // wrap for pm
+        if (hour > 12) {
+            currTime = QTime (hour-12, min, sec);
             ampm = 1;
-        }
-    }
-
-    // wrap for 12 hour time
-    if (currMode == 1)
-    {
-        // midnight
-        if (hour == 0)
-        {
+        // wrap for midnight
+        } else if (hour == 0) {
             currTime = QTime (12, min, sec);
-        // noon
-        } else if (hour == 12) {
-        // 1 pm
-        } else if (hour >= 13) {
-            currTime = QTime (hour - 12, min, sec);
+            ampm = 0;
+
         }
 
     }
 
-    //Need to set to pm if hour is 13+
-    if(currMode == 0)
-    {
-        if(hour >= 13)
-        {
-            ampm = 1;//set to pm
-        }
-    }
-
 }
 
-void MainWindow::setMode(int newMode)
+// check that clock input is valid
+bool MainWindow::isValidInput ()
 {
 
-    currMode = newMode;
+    QString text = ui -> timeEdit -> text ();
 
+    // wrong number characters
+    if (text.length () != 6)
+    {
+        return false;
+    }
+
+    // not all numbers
+    bool ok;
+    text.toInt (&ok, 10);
+    if (ok == false)
+    {
+        return false;
+    }
+
+    // h m or s too big
+    int hour = (text.at (0).digitValue ()) * 10 + text.at (1).digitValue ();
+    int min = (text.at (2).digitValue ()) * 10 + text.at (3).digitValue ();
+    int sec = (text.at (4).digitValue ()) * 10 + text.at (5).digitValue ();
+    if (hour < 0 or hour >= 24)
+    {
+        return false;
+    }
+    if (min < 0 or min >= 60)
+    {
+        return false;
+    }
+    if (sec < 0 or sec >= 60)
+    {
+        return false;
+    }
+
+    // passed all tests
+    return true;
 }
 
 
-void MainWindow::on_mode_clicked()
-{
-
-    int sec = currTime.second ();
-    int min = currTime.minute ();
-    int hour = currTime.hour ();
-    //this block will add 12 hours to clock if it is toggled from 12 hour mode and it is pm to correctly display the 24 hour equivalent
-    if(currMode == 1 && ampm == 1)
-    {
-        hour += 12;
-        if(hour >= 24)
-        {
-            hour = hour -24;
-        }
-        currTime = QTime(hour, min, sec);
-    }
-    else if(currMode == 0 && hour <= 11)
-    {
-        ampm = 0;
-    }
-
-
-
-    //mode_24 is true if checked, false if unchecked
-    mode_24hour = ui->mode->isChecked();
-    if(mode_24hour == false)
-    {
-        currMode = 0;//24 hour
-    }
-    else
-    {
-        currMode = 1;//12 hour
-    }
-}
-
-
-
-void MainWindow::on_pushButton_clicked()
-{
-
-    //this button toggles the value of ampm on the push
-    if(ampm == 0)
-    {
-        ampm = 1;
-    }
-    else
-    {
-        ampm = 0;
-    }
-}

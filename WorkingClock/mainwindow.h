@@ -19,36 +19,32 @@ public:
 
 private slots:
 
-//    void on_checkBox_2_clicked();
-//    void on_comboBox_2_activated(const QString &arg1);
 
+    // EVENT HANDLERS
     void on_update_clicked();
-
     void on_reset_clicked();
 
-    // clock methods
+    // INIT
     void clockInit ();
     void timerInit ();
+
+    // CLOCK METHODS
     void setTime (QTime newTime);
     void setMode (int newMode);
     void showTime ();
     void updateTime ();
-
-    void on_mode_clicked();
-
-
-    void on_pushButton_clicked();
+    void updateAMPM ();
+    void wrap12hour ();
+    bool isValidInput ();
 
 private:
     Ui::MainWindow *ui;
 
     // clock member variables
     QTime currTime;
-    QTimer* timer;
     int currMode; // 0= 24, 1= 12
-    int ampm; // -1= N/A, 0= am, 1= pm
-    bool mode_24hour;//true is 24, false is 12
-    //int sec,min,hour;
+    int ampm; // 0= am, 1= pm
+    QTimer* timer;
 
 };
 
