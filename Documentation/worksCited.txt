@@ -1,0 +1,10 @@
+WORKS CITED:
+
+1. https://www.youtube.com/watch?v=HiOOWDb4YjE
+	YouTube video demonstrating how to set up a basic project in QT.
+
+2. http://doc.qt.io/qt-5/qtwidgets-widgets-digitalclock-example.html
+	Tutorial demonstrating how to use QTimer and QTime classes to create a clock.
+	
+3. http://doc.qt.io/qt-5/classes.html
+	QT documentation for each class.
