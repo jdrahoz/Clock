@@ -1,3 +1,9 @@
+/**
+*	@file mainwindow.cpp
+* 	@author Quinten Wiley, Julia Drahozal, Omar Alzubbi, Kate Strombom
+*	@date 2016.02.12
+*
+*/
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTime>
@@ -48,6 +54,7 @@ void MainWindow::timerInit ()
 {
 
     timer = new QTimer (this);
+    //every time the timer hits 1000 ms, call update time and show time
     connect (timer, SIGNAL (timeout ()), this, SLOT (updateTime()));
     connect (timer, SIGNAL (timeout ()), this, SLOT (showTime()));
 
