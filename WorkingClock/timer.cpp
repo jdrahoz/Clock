@@ -63,3 +63,8 @@ int timer::currentTime()
   int currentTimeNow = Hour + Min + Sec;
   return (currentTimeNow);
 }
+
+void timer::resetTimer()
+{
+    setTime(0,0,0);
+}
