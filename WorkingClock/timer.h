@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef TIMER_H
+#define TIMER_H
 
 #include <QMainWindow>
 #include <QTime>
@@ -15,6 +15,7 @@ public:
 	void countDown();
 	void calculateTime();
 	int currentTime();
+        void resetTimer();
 private:
 	int m_sec;
 	int m_min;
