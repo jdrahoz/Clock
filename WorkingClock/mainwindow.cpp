@@ -330,4 +330,112 @@ bool MainWindow::isValidInput ()
     return true;
 }
 
+bool MainWindow:calIsValidInput()
+{
+  //gets the input from the month part of the calendar
+  QString monthInput=ui->calendarEnter2->text();
 
+  //wrong number of characters
+  if(monthInput.length() >2)//TODO: take care of case with one caracter input
+  {
+    return false;
+  }
+
+  //ensures input is all numbers
+  bool ok;
+  monthInput.toInt (&ok, 10);
+  if(ok==false)
+  {
+    return false;
+  }
+
+  //sets the value of the month int to the value given by the input
+  int monthInt;//the int we'll handle later
+  if(monthInput.length() ==1)//handles the case with length=1
+  {
+    monthInt=monthInput.at(0).digitValue();
+  }
+  else if(monthInput.length()==2)//handles the case with length=2
+  {
+    int monthInt=monthInput.at(0).digitValue() * 10 + monthInput.at(1).digitValue();
+  }
+  else//if length != 1||2, then return false, invalid input
+  {
+    return false;
+  }
+
+  //ensures that the month is within the specified bounds
+  if(monthInt<1)
+  {
+    return false;
+  }
+  else if(monthInt>12)
+  {
+    return false;
+  }
+
+
+  //Gets the input from the day text box in a calendar
+  Qstring dayInput =ui->calendarEnter2->text();//in qstring form, need to convert to int, check
+
+  //checks for wrong number of characters
+  if(text.length() >2)//TODO: take care of case with one character input
+  {
+    return false;
+  }
+
+  //ensures input is all numbers
+  bool ok;
+  dayInput.toInt (&ok, 10);
+  if(ok==false)
+  {
+    return false;
+  }
+
+  //sets the value of day(int) from the value given in dayInput (String)
+  int dayInt;
+  if(dayInput.length() ==1)//handles case where length=1
+  {
+    dayInt=dayInput.at(0).digitValue();
+  }
+  else if(dayInput.length()==2)
+  {
+    dayInt=dayInput.at(0).digitValue() * 10 + dayInput.at(1).digitValue();
+  }
+  else
+  {
+    return false;
+  }
+
+  //ensures that the day is witin specified bounds
+  if(dayInt<1)
+  {
+    return false;
+  }
+  else if(monthInt==1 || monthInt==3 || monthInt==5 || monthInt==7 || monthInt==8 || monthInt==10 || monthInt==12)//handles January,March, May, July,August,October,and December Case
+  {
+    if(dayInt>31)
+    {
+      return false;
+    }
+  }
+  else if(monthInt==4|| monthInt==6 || monthInt==9 || monthInt==11)
+  {
+    if(dayInt>30)
+    {
+      return false;
+    }
+  }
+  else if(monthInt==2)
+  {
+    if(dayInt>29)
+    {
+      return false;
+    }
+  }
+  else
+  {
+    return false;
+  }
+  return true;
+}

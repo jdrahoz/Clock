@@ -14,6 +14,10 @@ Calendar::Calendar()
   m_month=0;
   m_dayOfWeek=0;
 }
+void Calendar::switchDay()
+{
+
+}
 void Calendar::setDay(int month, int day)
 {
   m_month=month;
@@ -99,4 +103,26 @@ void Calendar::setDay(int month, int day)
   {
     m_dayOfWeek=dowStartAt+5;
   }
+}
+
+
+int Calendar::getDay()
+{
+  return m_day;
+}
+void setMonth(int newMonth)
+{
+  m_month=newMonth;
+}
+int getMonth()
+{
+  return m_month;
+}
+void setDayOfWeek(int newDOW)
+{
+  m_dayOfWeek=newDOW;
+}
+int getDayOfWeek()
+{
+  return(m_dayOfWeek);
 }
