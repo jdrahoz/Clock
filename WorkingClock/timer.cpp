@@ -1,4 +1,6 @@
-timer:timer()
+#include "timer.h"
+
+timer::timer()
 {
 	m_sec = 0;
 	m_min = 0;
@@ -10,7 +12,7 @@ void timer::setTime(int hour, int minutes, int seconds)
 {
 	if((hour>=0)&&(hour<=23))
 	{
-		m_hour = hour;
+        m_hr = hour;
 	}
 	if((minutes>=0)&&(minutes<=59))
 	{
@@ -23,7 +25,7 @@ void timer::setTime(int hour, int minutes, int seconds)
 }
 void timer::countDown()
 {
-	myTime = (currentTime() + 1)
+    myTime = (currentTime() + 1);
 	while(myTime != currentTime())
 	{
 		currentTime();

@@ -15,14 +15,13 @@
 class Calendar
 {
   public:
-     switchDay();
-     setDay(int Month, int Day);
+     Calendar();
+     void switchDay();
+     void setDay(int Month, int Day);
 
   private:
      int m_day;
      int m_month;
      int m_dayOfWeek;
-
-
 };
-endif;
+#endif

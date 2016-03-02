@@ -3,62 +3,67 @@
 * @author   Austin Bailey
 *	@date     2/28/2016
 */
-Calendar:Calendar()
+
+#include "Calendar.h"
+#include <iostream>
+using namespace std;
+
+Calendar::Calendar()
 {
   m_day=0;
   m_month=0;
   m_dayOfWeek=0;
 }
-Calendar:setDay(int month, int day)
+void Calendar::setDay(int month, int day)
 {
   m_month=month;
   m_day=day;
-  int dowStartsAt;//determines the day of the week the month began on, 0=Sunday, 1=Monday etc
-  if(Month==1)
+  int dowStartAt;//determines the day of the week the month began on, 0=Sunday, 1=Monday etc
+  if( month==1)
   {
     dowStartAt=5;
   }
-  else if(Month==2)
+  else if(month==2)
   {
     dowStartAt=1;
   }
-  else if(Month==3)
+  else if(month==3)
   {
     dowStartAt=2;
   }
-  else if(Month==4)
+  else if(month==4)
   {
     dowStartAt=5;
   }
-  else if(Month==5)
+  else if(month==5)
   {
     dowStartAt=0;
   }
-  else if(Month==6)
+  else if(month==6)
   {
     dowStartAt=3;
   }
-  else if(Month==7)
+  else if(month==7)
   {
     dowStartAt=5;
   }
-  else if(Month==8)
+  else if(month==8)
   {
     dowStartAt=1;
   }
-  else if(Month==9)
+  else if(month==9)
   {
     dowStartAt=4;
   }
-  else if(Month==10)
+  else if(month==10)
   {
     dowStartAt=6;
   }
-  else if(Month==11)
+  else if(month==11)
   {
     dowStartAt=2;
   }
-  else if(Month==12)
+  else if(month==12)
   {
     dowStartAt=4;
   }
