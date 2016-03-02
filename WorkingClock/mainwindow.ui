@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -724,12 +724,45 @@
        </widget>
       </widget>
      </widget>
+     <widget class="QWidget" name="widgetCalender" native="true">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>190</y>
+        <width>191</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <widget class="QPushButton" name="enterButton">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>150</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Enter</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="calenderEnter">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>120</y>
+         <width>113</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="widgetTimer" native="true">
       <property name="geometry">
        <rect>
         <x>49</x>
@@ -738,7 +771,7 @@
         <height>591</height>
        </rect>
       </property>
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="spinBoxHr">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -748,7 +781,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_2">
+      <widget class="QSpinBox" name="spinBoxMin">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -758,7 +791,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_3">
+      <widget class="QSpinBox" name="spinBoxSec">
        <property name="geometry">
         <rect>
          <x>250</x>
@@ -768,7 +801,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="resetButtonTimer">
        <property name="geometry">
         <rect>
          <x>370</x>
@@ -781,7 +814,7 @@
         <string>RESET</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pauseButtonTimer">
        <property name="geometry">
         <rect>
          <x>370</x>
@@ -794,7 +827,7 @@
         <string>Pause</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="playButtonTimer">
        <property name="geometry">
         <rect>
          <x>370</x>
@@ -807,7 +840,7 @@
         <string>Play</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="startButtonTimer">
        <property name="geometry">
         <rect>
          <x>370</x>
@@ -820,7 +853,7 @@
         <string>Start</string>
        </property>
       </widget>
-      <widget class="QLCDNumber" name="Timer">
+      <widget class="QLCDNumber" name="TimerDisplay">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -831,7 +864,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget_2" native="true">
+     <widget class="QWidget" name="widgetStopwatch" native="true">
       <property name="geometry">
        <rect>
         <x>620</x>
@@ -840,7 +873,7 @@
         <height>591</height>
        </rect>
       </property>
-      <widget class="QLCDNumber" name="Timer_2">
+      <widget class="QLCDNumber" name="StopwatchDisplay">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -850,7 +883,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="startButtonStopwatch">
        <property name="geometry">
         <rect>
          <x>390</x>
@@ -863,7 +896,7 @@
         <string>Start</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="resetButtonStopwatch">
        <property name="geometry">
         <rect>
          <x>390</x>
@@ -876,7 +909,7 @@
         <string>RESET</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="stopButtonStopwatch">
        <property name="geometry">
         <rect>
          <x>390</x>
@@ -899,7 +932,7 @@
      <x>0</x>
      <y>0</y>
      <width>1461</width>
-     <height>27</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
