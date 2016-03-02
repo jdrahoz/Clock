@@ -7,6 +7,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 #include <QTime>
 #include <QTimer>
 
@@ -132,6 +133,12 @@ private:
     int currMode; // 0= 24, 1= 12
     int ampm; // 0= am, 1= pm
     QTimer* timer;
+
+    //prototype button additions
+    qreal scale;
+    QPushButton *m_zoomIn;
+    QPushButton *m_zoomOut;
+    QPushButton *m_blackScreen;
 
 };
 
