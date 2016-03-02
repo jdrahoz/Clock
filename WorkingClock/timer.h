@@ -1,3 +1,9 @@
+/**
+*	@file     Timer.h
+* @author   Michael Wang
+*	@date     3/01/2016
+*/
+
 #ifndef TIMER_H
 #define TIMER_H
 
@@ -6,6 +12,10 @@
 #include <QTimer>
 
 #include <ctime>
+
+namespace Ui {
+class MainWindow;
+}
 
 class timer
 {
@@ -16,6 +26,7 @@ public:
 	void calculateTime();
 	int currentTime();
         void resetTimer();
+        void showTimer();
 private:
 	int m_sec;
 	int m_min;
@@ -24,4 +35,4 @@ private:
 	bool m_done;
 
 };
-#endif
+#endif;

@@ -1,18 +1,29 @@
+/**
+*	@file     Timer.cpp
+* @author   Michael Wang
+*	@date     3/01/2016
+*/
 #include "timer.h"
 
-timer::timer()
+timer::timer(QWidget *parent)
+QTimer (parent),
+ui (new Ui::Timer)
 {
 	m_sec = 0;
 	m_min = 0;
 	m_hr = 0;
 	myTime = 0;
 	m_done = false;
+
+	spinBoxHr.setRange(0,23);
+	spinBoxMin.setRange(0,59);
+	spinBox.setRange(0,59);
 }
 void timer::setTime(int hour, int minutes, int seconds)
 {
 	if((hour>=0)&&(hour<=23))
 	{
-        m_hr = hour;
+		m_hour = hour;
 	}
 	if((minutes>=0)&&(minutes<=59))
 	{
@@ -25,7 +36,7 @@ void timer::setTime(int hour, int minutes, int seconds)
 }
 void timer::countDown()
 {
-    myTime = (currentTime() + 1);
+	myTime = (currentTime() + 1)
 	while(myTime != currentTime())
 	{
 		currentTime();
@@ -69,4 +80,10 @@ int timer::currentTime()
 void timer::resetTimer()
 {
     setTime(0,0,0);
+}
+
+void timer::showTimer()
+{
+    QString timerText = currentTime();
+    ui -> TimerDisplay -> display (timerText);
 }
