@@ -9,19 +9,23 @@
 #include <QMainWindow>
 #include <QTime>
 #include <QTimer>
-
 #include <ctime>
 
 class Calendar
 {
   public:
-     Calendar();
-     void switchDay();
-     void setDay(int Month, int Day);
+    Calendar();
+    void switchDay();
+    void setDay(int Month, int Day);
+    int getDay();
+    void setMonth(int newMonth);
+    int getMonth();
+    void setDayOfWeek(int newDOW);
+    int getDayOfWeek();
 
   private:
-     int m_day;
-     int m_month;
-     int m_dayOfWeek;
+    int m_day;
+    int m_month;
+    int m_dayOfWeek;
 };
 #endif
