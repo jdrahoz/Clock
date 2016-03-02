@@ -755,6 +755,19 @@
        </widget>
       </widget>
      </widget>
+     <widget class="QPushButton" name="zoomIn">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>90</y>
+        <width>90</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Zoom In</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -930,7 +943,7 @@
      <x>0</x>
      <y>0</y>
      <width>1461</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
   </widget>

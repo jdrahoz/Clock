@@ -132,8 +132,33 @@ void MainWindow::on_reset_clicked ()
     setTime (QTime (0,0,0));
     timer -> start (1000);
     showTime ();
+}
+
+/**
+  * Prototyping for new UI functionality
+  * Zoom in, Zoom out, black screen
+  */
+
+void MainWindow::on_zoomIn_clicked()
+{
 
 }
+
+void MainWindow::on_zoomOut_clicked()
+{
+
+
+}
+
+void MainWindow::on_blackScreen_clicked()
+{
+
+
+}
+
+/**
+  *End Prototyping
+  */
 
 // --------------------------------------------------------------------
 // --------------------------- CLOCK METHODS --------------------------

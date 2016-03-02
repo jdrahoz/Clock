@@ -45,6 +45,26 @@ private slots:
        *  @post Time displayed is reverted to 0000000
        *  @return none
        */
+    void on_zoomIn_clicked();
+    /**
+       *  @pre none
+       *  @post Zooms in on display (increases font)
+       *  @return none
+       */
+
+    void on_zoomOut_clicked();
+    /**
+       *  @pre none
+       *  @post Zooms out of display (decreases font)
+       *  @return none
+       */
+
+    void on_blackScreen_clicked();
+    /**
+       *  @pre none
+       *  @post Turns off the display, leaving a black screen
+       *  @return none
+       */
 
     // INIT
     void clockInit ();
