@@ -33,6 +33,10 @@ private slots:
 
     // EVENT HANDLERS
 
+    void startTimer();
+    void updateTimer();
+    void startTimerInit();
+    void on_startTimer_clicked();
 
     void on_update_clicked();
     /**

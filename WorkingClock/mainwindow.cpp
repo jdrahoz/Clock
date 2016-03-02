@@ -56,6 +56,38 @@ MainWindow::~MainWindow ()
 // ------------------------------- INIT -------------------------------
 // --------------------------------------------------------------------
 
+void MainWindow::startTimerInit()
+{
+    QTimer* startTimer = new QTimer (this);
+    //every time the timer hits 1000 ms, call update time and show time
+    connect (ui->resetButtonTimer, SIGNAL (release ()), this, SLOT (updateTimer()));
+    connect (ui->startButtonTimer, SIGNAL (release ()), this, SLOT (startTimer()));
+
+    ui->spinBoxHr->setRange(0, 23);
+    ui->spinBoxMin->setRange(0, 59);
+    ui->spinBoxSec->setRange(0, 59);
+}
+
+void MainWindow::updateTimer()
+{
+
+}
+
+void MainWindow::on_startTimer_clicked()
+{
+
+}
+
+void MainWindow::startTimer()
+{
+    ui -> TimerDisplay -> setDigitCount (8);
+    int hrValue = ui->spinBoxHr->value();
+    int minValue = ui->spinBoxMin->value();
+    int secValue = ui->spinBoxSec->value();
+    ui-> TimerDisplay ->display("12345678");
+}
+
+
 // initialize digital display
 void MainWindow::clockInit ()
 {
