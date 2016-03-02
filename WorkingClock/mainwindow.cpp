@@ -179,14 +179,17 @@ void MainWindow::showTime ()
         ui -> Display -> setDigitCount (8);
 
     // 12 hour
-    } else if (currMode == 1) {
+    }
+    else if (currMode == 1)
+    {
         ui -> Display -> setDigitCount (11);
         // am
         if (ampm == 0)
         {
             textTime = textTime + " A ";
         // pm
-        } else if (ampm == 1)
+        }
+        else if (ampm == 1)
         {
             textTime = textTime + " P ";
         }
@@ -238,12 +241,16 @@ void MainWindow::updateAMPM ()
         {
             ampm = 0;
         // pm
-        } else if (currTime.hour () >= 12) {
+        }
+        else if (currTime.hour () >= 12)
+        {
             ampm = 1;
         }
 
     // 12 hour
-    } else if (currMode == 1) {
+    }
+    else if (currMode == 1)
+    {
 
         // 12:00 am or pm
         if (currTime.hour () == 12 and currTime.minute () == 00 and currTime.second () == 00)
@@ -253,7 +260,9 @@ void MainWindow::updateAMPM ()
             if (ampm == 0)
             {
                 ampm = 1;
-            } else if (ampm == 1) {
+            }
+            else if (ampm == 1)
+            {
                 ampm = 0;
             }
 
@@ -275,18 +284,23 @@ void MainWindow::wrap12hour ()
         int hour = currTime.hour ();
 
         // wrap for pm
-        if (hour > 12) {
+        if (hour > 12)
+        {
             currTime = QTime (hour-12, min, sec);
             ampm = 1;
         // wrap for midnight
-        } else if (hour == 0) {
+        }
+        else if (hour == 0)
+        {
             currTime = QTime (12, min, sec);
             ampm = 0;
-
+//TODO: put the increment day method here
+            if(m_calendarInitialized)
+            {
+              wrapDayAtMidnight();
+            }
         }
-
     }
-
 }
 
 // check that clock input is valid
@@ -329,8 +343,51 @@ bool MainWindow::isValidInput ()
     // passed all tests
     return true;
 }
-
-bool MainWindow:calIsValidInput()
+void MainWindow::wrapDayAtMidnight()
+{
+  if(m_day<29)//just incriments day if day is not at the end of the month
+  {
+    m_day++;
+    return;
+  }
+  else if(m_month==2)//handles Feb case
+  {
+    if(m_day==29)
+    {
+      m_month=3;
+      m_day=1;
+    }
+  }
+  else if(m_month==1||m_month==3||m_month==5||m_month==7||m_month==8||m_month==10||m_month==12)//handles the cases with months that have 31 days
+  {
+    if(m_day==29||m_day==30)//On these days the month stays the same
+    {
+      m_day++;
+      return;
+    }
+    else if(m_month==12)//Specific case for december, where the year wraps
+    {
+      m_month=1;
+      m_day=1;
+      return;
+    }
+    else//Case for all other 31 day long months
+    {
+      m_month++;
+      m_day=1;
+      return;
+    }
+  }
+  else
+  {
+    if(m_day==29)//
+    {
+      m_day++;
+      return;
+    }
+  }
+}
+bool MainWindow::calIsValidInput ()
 {
   //gets the input from the month part of the calendar
   QString monthInput=ui->calendarEnter2->text();
@@ -437,5 +494,8 @@ bool MainWindow:calIsValidInput()
   {
     return false;
   }
+  m_month=monthInt;
+  m_day=dayInt;
+  m_calendarInitialized=true;
   return true;
 }
