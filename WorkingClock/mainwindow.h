@@ -1,7 +1,9 @@
 /**
 *	@file mainwindow.h
 * 	@author Quinten Wiley, Julia Drahozal, Omar Alzubbi, Kate Strombom
-*	@date 2016.02.12
+*       edited by Austin Bailey, Tim Elvart, Will Teeple, Michael Wang
+*	@date 2016.02.12 created
+*         2016.03.03 edited last
 */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -33,12 +35,47 @@ private slots:
 
     // EVENT HANDLERS
     void playTimer();
+    /**
+       *  @pre none
+       *  @post continues the timer
+       *  @return none
+       */
     void pauseTimer();
+    /**
+       *  @pre none
+       *  @post pauses the timer
+       *  @return none
+       */
     void timerDone();
+    /**
+       *  @pre none
+       *  @post outputs a 0 to the string
+       *  @return none
+       */
     void updateTimer();
+    /**
+       *  @pre none
+       *  @post updates the timer
+       *  @return none
+       */
     void goodTimerInput();
+    /**
+       *  @pre none
+       *  @post checks the spinboxes for valid input
+       *  @return none
+       */
     void resetTimer();
+    /**
+       *  @pre none
+       *  @post resets the timerdisplay and function to 0
+       *  @return none
+       */
     void startTimer();
+    /**
+       *  @pre none
+       *  @post starts the timer
+       *  @return none
+       */
 
     //bool calIsValidInput();
     //void wrapDayAtMidnight();
@@ -150,6 +187,7 @@ private:
     QPushButton *m_blackScreen;
     QPushButton *m_startTimer;
 
+    //additional timer variables
     int hrTime;
     int minTime;
     int secTime;

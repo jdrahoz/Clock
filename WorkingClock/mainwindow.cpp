@@ -59,6 +59,8 @@ MainWindow::~MainWindow ()
 // --------------------------------------------------------------------
 // ------------------------------- INIT -------------------------------
 // --------------------------------------------------------------------
+
+//continues the timer
 void MainWindow::playTimer()
 {
     if((ui->spinBoxHr->value() == 0) && (ui->spinBoxMin->value() == 0) && (ui->spinBoxSec->value() == 0))
@@ -71,16 +73,19 @@ void MainWindow::playTimer()
     }
 }
 
+//pauses the timer
 void MainWindow::pauseTimer()
 {
    ui-> TimerDisplay ->display(nowTime);
 }
 
+//displays a single zero if the timer is done
 void MainWindow::timerDone()
 {
     ui-> TimerDisplay ->display(0);
 }
 
+//updates the timer
 void MainWindow::updateTimer()
 {
     if(timeDone == false)
@@ -121,6 +126,7 @@ void MainWindow::updateTimer()
     }
 }
 
+//checks the inputs of the timer to see if it is valid
 void MainWindow::goodTimerInput()
 {
     hrValue = ui->spinBoxHr->value();
@@ -143,6 +149,7 @@ void MainWindow::goodTimerInput()
     secTime = secValue;
 }
 
+//resets the timer and the inputs
 void MainWindow::resetTimer()
 {
     ui->spinBoxHr->setValue(0);
@@ -151,6 +158,7 @@ void MainWindow::resetTimer()
     ui-> TimerDisplay ->display(000000);
 }
 
+//starts the timer
 void MainWindow::startTimer()
 {
     ui->TimerDisplay->setSegmentStyle (QLCDNumber::Filled);
