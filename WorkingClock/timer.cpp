@@ -5,7 +5,8 @@
 */
 #include "timer.h"
 
-timer::timer(QWidget *parent)
+/**
+timer::timer()
 QTimer (parent),
 ui (new Ui::Timer)
 {
@@ -87,3 +88,4 @@ void timer::showTimer()
     QString timerText = currentTime();
     ui -> TimerDisplay -> display (timerText);
 }
+*/

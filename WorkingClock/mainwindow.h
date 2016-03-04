@@ -32,11 +32,16 @@ private slots:
 
 
     // EVENT HANDLERS
-
-    void startTimer();
+    void playTimer();
+    void pauseTimer();
+    void timerDone();
     void updateTimer();
-    void startTimerInit();
-    void on_startTimer_clicked();
+    void goodTimerInput();
+    void resetTimer();
+    void startTimer();
+
+    //bool calIsValidInput();
+    //void wrapDayAtMidnight();
 
     void on_update_clicked();
     /**
@@ -143,7 +148,19 @@ private:
     QPushButton *m_zoomIn;
     QPushButton *m_zoomOut;
     QPushButton *m_blackScreen;
+    QPushButton *m_startTimer;
 
+    int hrTime;
+    int minTime;
+    int secTime;
+    int hrValue;
+    int minValue;
+    int secValue;
+    int timeDone;
+    int nowTime;
+
+    int m_month;
+    int m_day;
 };
 
 #endif // MAINWINDOW_H

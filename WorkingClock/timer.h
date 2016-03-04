@@ -3,7 +3,7 @@
 * @author   Michael Wang
 *	@date     3/01/2016
 */
-
+/**
 #ifndef TIMER_H
 #define TIMER_H
 
@@ -36,3 +36,4 @@ private:
 
 };
 #endif;
+*/

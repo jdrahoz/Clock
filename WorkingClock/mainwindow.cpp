@@ -7,6 +7,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTime>
+#include <time.h>
+#include <ctime>
 
 // --------------------------------------------------------------------
 // --------------------- CONSTRUCTOR & DESTRUCTOR ---------------------
@@ -28,7 +30,7 @@ MainWindow::MainWindow (QWidget *parent) :
     m_zoomIn = new QPushButton("Zoom In", this);
     // set size and location of the button
     m_zoomIn->setGeometry(QRect(QPoint(100, 100),
-    QSize(200, 50)));
+    QSize(400, 50)));
     // Connect button signal to appropriate slot
     connect(m_zoomIn, SIGNAL (released()), this, SLOT (on_zoomIn_clicked()));
 
@@ -40,8 +42,10 @@ MainWindow::MainWindow (QWidget *parent) :
     // Connect button signal to appropriate slot
     connect(m_zoomOut, SIGNAL (released()), this, SLOT (on_zoomOut_clicked()));
 
-     connect(ui->spinBoxHr, SIGNAL (released()), this, SLOT (on_zoomOut_clicked()));
-
+    connect(ui->startButtonTimer, SIGNAL (released()), this, SLOT (startTimer()));
+    connect(ui->resetButtonTimer, SIGNAL (released()), this, SLOT (resetTimer()));
+    connect(ui->pauseButtonTimer, SIGNAL (released()), this, SLOT (pauseTimer()));
+    connect(ui->playButtonTimer, SIGNAL (released()), this, SLOT (playTimer()));
 }
 
 MainWindow::~MainWindow ()
@@ -55,36 +59,108 @@ MainWindow::~MainWindow ()
 // --------------------------------------------------------------------
 // ------------------------------- INIT -------------------------------
 // --------------------------------------------------------------------
-
-void MainWindow::startTimerInit()
+void MainWindow::playTimer()
 {
-    QTimer* startTimer = new QTimer (this);
-    //every time the timer hits 1000 ms, call update time and show time
-    connect (ui->resetButtonTimer, SIGNAL (release ()), this, SLOT (updateTimer()));
-    connect (ui->startButtonTimer, SIGNAL (release ()), this, SLOT (startTimer()));
+    if((ui->spinBoxHr->value() == 0) && (ui->spinBoxMin->value() == 0) && (ui->spinBoxSec->value() == 0))
+    {
+        ui-> TimerDisplay ->display(0);
+    }
+    else
+    {
+        updateTimer();
+    }
+}
 
-    ui->spinBoxHr->setRange(0, 23);
-    ui->spinBoxMin->setRange(0, 59);
-    ui->spinBoxSec->setRange(0, 59);
+void MainWindow::pauseTimer()
+{
+   ui-> TimerDisplay ->display(nowTime);
+}
+
+void MainWindow::timerDone()
+{
+    ui-> TimerDisplay ->display(0);
 }
 
 void MainWindow::updateTimer()
 {
+    if(timeDone == false)
+    {
+        //int temp = time(NULL) + 1;
+        //while(temp > time(NULL));
+        //Sleep(1000);
+        secTime--;
+        if((secTime == -1) && (minTime > 0))
+        {
+           secTime = 59;
+           minTime--;
+           if((minTime == -1) && (hrTime > 0))
+           {
+               minTime = 59;
+               hrTime--;
+               if(hrTime == -1)
+               {
+                   hrTime = 0;
+                   if((hrTime == 0) && (minTime == 0) && (secTime == 0))
+                   {
+                        timerDone();
+                        timeDone = true;
+                   }
+               }
+           }
+        }
+        hrTime = hrValue*10000;
+        minTime = minValue*100;
+        secTime = secValue;
+        nowTime = hrTime+minTime+secValue;
+        ui-> TimerDisplay ->display(nowTime);
+        updateTimer();
+    }
+    else
+    {
 
+    }
 }
 
-void MainWindow::on_startTimer_clicked()
+void MainWindow::goodTimerInput()
 {
+    hrValue = ui->spinBoxHr->value();
+    minValue = ui->spinBoxMin->value();
+    secValue = ui->spinBoxSec->value();
+    if(hrValue > 23)
+    {
+        ui->spinBoxHr->setValue(0);
+    }
+    if(minValue > 59)
+    {
+        ui->spinBoxMin->setValue(0);
+    }
+    if(secValue >59)
+    {
+        ui->spinBoxSec->setValue(0);
+    }
+    hrTime = hrValue*10000;
+    minTime = minValue*100;
+    secTime = secValue;
+}
 
+void MainWindow::resetTimer()
+{
+    ui->spinBoxHr->setValue(0);
+    ui->spinBoxMin->setValue(0);
+    ui->spinBoxSec->setValue(0);
+    ui-> TimerDisplay ->display(000000);
 }
 
 void MainWindow::startTimer()
 {
-    ui -> TimerDisplay -> setDigitCount (8);
-    int hrValue = ui->spinBoxHr->value();
-    int minValue = ui->spinBoxMin->value();
-    int secValue = ui->spinBoxSec->value();
-    ui-> TimerDisplay ->display("12345678");
+    ui->TimerDisplay->setSegmentStyle (QLCDNumber::Filled);
+    ui -> TimerDisplay -> setDigitCount (6);
+    goodTimerInput();
+
+    nowTime = hrTime+minTime+secValue;
+    ui-> TimerDisplay ->display(nowTime);
+
+    updateTimer();
 }
 
 
@@ -333,6 +409,7 @@ void MainWindow::updateAMPM ()
 }
 
 // in 12 hour mode, wrap for pm and midnight
+
 void MainWindow::wrap12hour ()
 {
 
@@ -354,11 +431,11 @@ void MainWindow::wrap12hour ()
         {
             currTime = QTime (12, min, sec);
             ampm = 0;
-//TODO: put the increment day method here
-            if(m_calendarInitialized)
-            {
-              wrapDayAtMidnight();
-            }
+    //TODO: put the increment day method here
+    //        if(m_calendarInitialized)
+    //        {
+    //          wrapDayAtMidnight();
+    //        }
         }
     }
 }
@@ -403,6 +480,7 @@ bool MainWindow::isValidInput ()
     // passed all tests
     return true;
 }
+/**
 void MainWindow::wrapDayAtMidnight()
 {
   if(m_day<29)//just incriments day if day is not at the end of the month
@@ -447,7 +525,7 @@ void MainWindow::wrapDayAtMidnight()
     }
   }
 }
-bool MainWindow::calIsValidInput ()
+    bool MainWindow::calIsValidInput ()
 {
   //gets the input from the month part of the calendar
   QString monthInput=ui->calendarEnter2->text();
@@ -496,13 +574,13 @@ bool MainWindow::calIsValidInput ()
   Qstring dayInput =ui->calendarEnter2->text();//in qstring form, need to convert to int, check
 
   //checks for wrong number of characters
-  if(text.length() >2)//TODO: take care of case with one character input
+  if(dayInput.length() >2)//TODO: take care of case with one character input
   {
     return false;
   }
 
+
   //ensures input is all numbers
-  bool ok;
   dayInput.toInt (&ok, 10);
   if(ok==false)
   {
@@ -559,3 +637,5 @@ bool MainWindow::calIsValidInput ()
   m_calendarInitialized=true;
   return true;
 }
+
+*/
