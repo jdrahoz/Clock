@@ -42,6 +42,15 @@ MainWindow::MainWindow (QWidget *parent) :
     // Connect button signal to appropriate slot
     connect(m_zoomOut, SIGNAL (released()), this, SLOT (on_zoomOut_clicked()));
 
+    connect(ui->spinBoxHr, SIGNAL (released()), this, SLOT ());
+    connect(ui->spinBoxMin, SIGNAL (released()), this, SLOT ());
+    connect(ui->spinBoxSec, SIGNAL (released()), this, SLOT ());
+
+    ui->spinBoxHr->setRange(0, 23);
+    ui->spinBoxMin->setRange(0, 59);
+    ui->spinBoxSec->setRange(0, 59);
+
+    //connnecting buttons for the timer
     connect(ui->startButtonTimer, SIGNAL (released()), this, SLOT (startTimer()));
     connect(ui->resetButtonTimer, SIGNAL (released()), this, SLOT (resetTimer()));
     connect(ui->pauseButtonTimer, SIGNAL (released()), this, SLOT (pauseTimer()));
@@ -63,20 +72,13 @@ MainWindow::~MainWindow ()
 //continues the timer
 void MainWindow::playTimer()
 {
-    if((ui->spinBoxHr->value() == 0) && (ui->spinBoxMin->value() == 0) && (ui->spinBoxSec->value() == 0))
-    {
-        ui-> TimerDisplay ->display(0);
-    }
-    else
-    {
-        updateTimer();
-    }
+    bPauseTime = false;
 }
 
 //pauses the timer
 void MainWindow::pauseTimer()
 {
-   ui-> TimerDisplay ->display(nowTime);
+    bPauseTime = true;
 }
 
 //displays a single zero if the timer is done
@@ -88,43 +90,46 @@ void MainWindow::timerDone()
 //updates the timer
 void MainWindow::updateTimer()
 {
-    if(timeDone == false)
-    {
-        //int temp = time(NULL) + 1;
-        //while(temp > time(NULL));
-        //Sleep(1000);
-        secTime--;
-        if((secTime == -1) && (minTime > 0))
+    int minFactor = 100;
+    int hrFactor = 10000;
+
+
+        if(bPauseTime)
         {
-           secTime = 59;
-           minTime--;
-           if((minTime == -1) && (hrTime > 0))
-           {
-               minTime = 59;
-               hrTime--;
-               if(hrTime == -1)
-               {
-                   hrTime = 0;
-                   if((hrTime == 0) && (minTime == 0) && (secTime == 0))
-                   {
-                        timerDone();
-                        timeDone = true;
-                   }
-               }
-           }
+            return;
         }
-        hrTime = hrValue*10000;
-        minTime = minValue*100;
-        secTime = secValue;
-        nowTime = hrTime+minTime+secValue;
-        ui-> TimerDisplay ->display(nowTime);
-        updateTimer();
-    }
-    else
-    {
+            if (secTime == 0)
+            {
+                secTime = 59;
+                if (minTime == 0 * minFactor)
+                {
+                    minTime = 59* minFactor;
+                    if(hrTime == 0*hrFactor)
+                    {
+                        secTime = 0;
+                        minTime = 0;
+                        timerDone();
+                    }
+                    else
+                    {
+                        hrTime = (hrTime - hrFactor);
+                    }
+                }
+                else
+                {
+                    minTime = (minTime - minFactor);
+                }
+
+            }
+            else
+            {
+                secTime--;
+            }
+            nowTime = hrTime+minTime+secTime;
+            ui-> TimerDisplay ->display(nowTime);
 
     }
-}
+
 
 //checks the inputs of the timer to see if it is valid
 void MainWindow::goodTimerInput()
@@ -132,21 +137,7 @@ void MainWindow::goodTimerInput()
     hrValue = ui->spinBoxHr->value();
     minValue = ui->spinBoxMin->value();
     secValue = ui->spinBoxSec->value();
-    if(hrValue > 23)
-    {
-        ui->spinBoxHr->setValue(0);
-    }
-    if(minValue > 59)
-    {
-        ui->spinBoxMin->setValue(0);
-    }
-    if(secValue >59)
-    {
-        ui->spinBoxSec->setValue(0);
-    }
-    hrTime = hrValue*10000;
-    minTime = minValue*100;
-    secTime = secValue;
+
 }
 
 //resets the timer and the inputs
@@ -155,20 +146,28 @@ void MainWindow::resetTimer()
     ui->spinBoxHr->setValue(0);
     ui->spinBoxMin->setValue(0);
     ui->spinBoxSec->setValue(0);
+    secTime = 0;
+    minTime = 0;
+    hrTime = 0;
     ui-> TimerDisplay ->display(000000);
 }
 
 //starts the timer
 void MainWindow::startTimer()
 {
+    bPauseTime = false;
     ui->TimerDisplay->setSegmentStyle (QLCDNumber::Filled);
     ui -> TimerDisplay -> setDigitCount (6);
     goodTimerInput();
 
+    hrTime = hrValue*10000;
+    minTime = minValue*100;
+    secTime = secValue;
+
     nowTime = hrTime+minTime+secValue;
     ui-> TimerDisplay ->display(nowTime);
-
-    updateTimer();
+    //this function connects the Timer to the system timer.
+    connect (timer, SIGNAL (timeout ()), this, SLOT (updateTimer()));
 }
 
 
@@ -192,6 +191,8 @@ void MainWindow::timerInit ()
     //every time the timer hits 1000 ms, call update time and show time
     connect (timer, SIGNAL (timeout ()), this, SLOT (updateTime()));
     connect (timer, SIGNAL (timeout ()), this, SLOT (showTime()));
+
+
 
 }
 

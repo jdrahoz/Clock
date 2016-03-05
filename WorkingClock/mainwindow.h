@@ -194,8 +194,8 @@ private:
     int hrValue;
     int minValue;
     int secValue;
-    int timeDone;
     int nowTime;
+    bool bPauseTime;
 
     int m_month;
     int m_day;
