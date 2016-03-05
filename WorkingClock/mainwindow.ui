@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1461</width>
-    <height>775</height>
+    <width>1460</width>
+    <height>780</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>730</width>
+    <height>390</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1825</width>
+    <height>975</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -19,7 +31,7 @@
      <rect>
       <x>-10</x>
       <y>0</y>
-      <width>1451</width>
+      <width>1171</width>
       <height>711</height>
      </rect>
     </property>
@@ -77,8 +89,8 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>751</width>
-         <height>451</height>
+         <width>771</width>
+         <height>471</height>
         </rect>
        </property>
        <widget class="QWidget" name="layoutWidget">
@@ -126,8 +138,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>371</width>
-               <height>111</height>
+               <width>370</width>
+               <height>110</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>462</width>
+               <height>137</height>
               </size>
              </property>
              <property name="mouseTracking">
@@ -203,6 +221,24 @@
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
               <widget class="QCheckBox" name="mode">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>93</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>116</width>
+                 <height>40</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -215,6 +251,24 @@
              </item>
              <item>
               <widget class="QCheckBox" name="am">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>93</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>116</width>
+                 <height>40</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -245,10 +299,22 @@
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>113</width>
+               <height>40</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
-               <width>75</width>
-               <height>30</height>
+               <width>113</width>
+               <height>40</height>
               </size>
              </property>
              <property name="palette">
@@ -689,7 +755,7 @@
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>128</width>
+               <width>28</width>
                <height>20</height>
               </size>
              </property>
@@ -699,6 +765,24 @@
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
               <widget class="QPushButton" name="update">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>93</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>116</width>
+                 <height>40</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -711,6 +795,24 @@
              </item>
              <item>
               <widget class="QPushButton" name="reset">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>93</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>116</width>
+                 <height>40</height>
+                </size>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -755,17 +857,30 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QPushButton" name="zoomIn">
+     <widget class="QPushButton" name="hideClock">
       <property name="geometry">
        <rect>
-        <x>870</x>
-        <y>90</y>
-        <width>90</width>
-        <height>31</height>
+        <x>840</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Zoom In</string>
+       <string>Hide Clock</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="showClock">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>110</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Clock</string>
       </property>
      </widget>
     </widget>
@@ -942,8 +1057,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1461</width>
-     <height>27</height>
+     <width>1460</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -959,5 +1074,38 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>hideClock</sender>
+   <signal>pressed()</signal>
+   <receiver>widget</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>860</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>791</x>
+     <y>361</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showClock</sender>
+   <signal>pressed()</signal>
+   <receiver>widget</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>892</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>789</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
