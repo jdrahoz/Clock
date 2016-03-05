@@ -110,19 +110,19 @@ int Calendar::getDay()
 {
   return m_day;
 }
-void setMonth(int newMonth)
+void Calendar::setMonth(int newMonth)
 {
   m_month=newMonth;
 }
-int getMonth()
+int Calendar::getMonth()
 {
   return m_month;
 }
-void setDayOfWeek(int newDOW)
+void Calendar::setDayOfWeek(int newDOW)
 {
   m_dayOfWeek=newDOW;
 }
-int getDayOfWeek()
+int Calendar::getDayOfWeek()
 {
   return(m_dayOfWeek);
 }

@@ -30,7 +30,7 @@ MainWindow::MainWindow (QWidget *parent) :
     m_zoomIn = new QPushButton("Zoom In", this);
     // set size and location of the button
     m_zoomIn->setGeometry(QRect(QPoint(100, 100),
-    QSize(400, 50)));
+    QSize(200, 50)));
     // Connect button signal to appropriate slot
     connect(m_zoomIn, SIGNAL (released()), this, SLOT (on_zoomIn_clicked()));
 
@@ -276,22 +276,22 @@ void MainWindow::on_reset_clicked ()
 
 void MainWindow::on_zoomIn_clicked()
 {
-    ui -> Display -> resize(1.25 * ui->Display->size());
-    ui -> reset -> resize(1.25 * ui->reset->size());
-    ui -> update -> resize(1.25 * ui->update->size());
-    ui -> am -> resize(1.25 * ui->am->size());
-    ui -> mode -> resize(1.25 * ui->mode->size());
-    ui -> timeEdit -> resize(1.25 * ui->timeEdit->size());
+    ui -> Display -> resize(1.05 * ui->Display->size());
+    ui -> reset -> resize(1.05 * ui->reset->size());
+    ui -> update -> resize(1.05 * ui->update->size());
+    ui -> am -> resize(1.05 * ui->am->size());
+    ui -> mode -> resize(1.05 * ui->mode->size());
+    ui -> timeEdit -> resize(1.05 * ui->timeEdit->size());
 }
 
 void MainWindow::on_zoomOut_clicked()
 {
-    ui -> Display -> resize(0.75 * ui->Display->size());
-    ui -> reset -> resize(0.75 * ui->reset->size());
-    ui -> update -> resize(0.75 * ui->update->size());
-    ui -> am -> resize(0.75 * ui->am->size());
-    ui -> mode -> resize(0.75 * ui->mode->size());
-    ui -> timeEdit -> resize(0.75 * ui->timeEdit->size());
+    ui -> Display -> resize(0.95 * ui->Display->size());
+    ui -> reset -> resize(0.95 * ui->reset->size());
+    ui -> update -> resize(0.95 * ui->update->size());
+    ui -> am -> resize(0.95 * ui->am->size());
+    ui -> mode -> resize(0.95 * ui->mode->size());
+    ui -> timeEdit -> resize(0.95 * ui->timeEdit->size());
 }
 
 void MainWindow::on_blackScreen_clicked()
