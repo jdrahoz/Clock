@@ -195,6 +195,26 @@ private slots:
        *  @return true if input is only integers within bounds
        */
 
+    void wrapDayAtMidnight();
+    /**
+      *  @pre date set;
+      *  @post changes m_month and m_day accordingly
+      *  @return void
+      */
+
+    bool calIsValidInput();
+    /**
+      * @pre inputs in calendar textboxes
+      * @post ensures that inputs are valid
+      * @return True if valid false else
+      */
+
+    void writeCalendarString();
+    /**
+      * @pre month/day data set properly
+      * @post outputs a string to textbox
+      * @return void
+      */
 private:
     Ui::MainWindow *ui;
 
@@ -223,7 +243,7 @@ private:
     //calendar variables
     int m_month;
     int m_day;
-
+    bool m_calendarInitialized;
     //stopwatch variables
     bool m_playwatch;
     int m_stopwatchseconds;

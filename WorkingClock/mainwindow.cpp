@@ -66,6 +66,10 @@ MainWindow::MainWindow (QWidget *parent) :
     connect(ui->stopButtonStopwatch, SIGNAL (released()), this, SLOT (pauseStopwatch()));
     connect(ui->resetButtonStopwatch, SIGNAL (released()), this, SLOT (resetStopwatch()));
 
+    //connecting buttons for calendar
+    connect(ui->calendarButton, SIGNAL (released()), this, SLOT (writeCalendarString()));
+
+    m_calendarInitialized=false;
 }
 
 MainWindow::~MainWindow ()
@@ -521,11 +525,12 @@ void MainWindow::wrap12hour ()
         {
             currTime = QTime (12, min, sec);
             ampm = 0;
-    //TODO: put the increment day method here
-    //        if(m_calendarInitialized)
-    //        {
-    //          wrapDayAtMidnight();
-    //        }
+            //addittion for calendar
+            if(m_calendarInitialized)
+            {
+                wrapDayAtMidnight();
+                MainWindow::writeCalendarString();
+            }
         }
     }
 }
@@ -570,7 +575,7 @@ bool MainWindow::isValidInput ()
     // passed all tests
     return true;
 }
-/**
+
 void MainWindow::wrapDayAtMidnight()
 {
   if(m_day<29)//just incriments day if day is not at the end of the month
@@ -580,6 +585,7 @@ void MainWindow::wrapDayAtMidnight()
   }
   else if(m_month==2)//handles Feb case
   {
+//     ui->CalendarEdit->setText("Got here");//debugging
     if(m_day==29)
     {
       m_month=3;
@@ -606,6 +612,18 @@ void MainWindow::wrapDayAtMidnight()
       return;
     }
   }
+  else if(m_month=4||m_month==6||m_month==9||m_month==11)
+  {
+      if(m_day==29)
+      {
+          m_day++;
+      }
+      else if(m_day==30)
+      {
+          m_month++;
+          m_day=1;
+      }
+  }
   else
   {
     if(m_day==29)//
@@ -615,10 +633,11 @@ void MainWindow::wrapDayAtMidnight()
     }
   }
 }
-    bool MainWindow::calIsValidInput ()
+
+bool MainWindow::calIsValidInput ()
 {
   //gets the input from the month part of the calendar
-  QString monthInput=ui->calendarEnter2->text();
+  QString monthInput=ui->monthEnter->text();
 
   //wrong number of characters
   if(monthInput.length() >2)//TODO: take care of case with one caracter input
@@ -635,14 +654,14 @@ void MainWindow::wrapDayAtMidnight()
   }
 
   //sets the value of the month int to the value given by the input
-  int monthInt;//the int we'll handle later
+  int monthInt=0;//the int we'll handle later
   if(monthInput.length() ==1)//handles the case with length=1
   {
     monthInt=monthInput.at(0).digitValue();
   }
   else if(monthInput.length()==2)//handles the case with length=2
   {
-    int monthInt=monthInput.at(0).digitValue() * 10 + monthInput.at(1).digitValue();
+    monthInt=(monthInput.at(0).digitValue() * 10) + (monthInput.at(1).digitValue());
   }
   else//if length != 1||2, then return false, invalid input
   {
@@ -661,7 +680,7 @@ void MainWindow::wrapDayAtMidnight()
 
 
   //Gets the input from the day text box in a calendar
-  Qstring dayInput =ui->calendarEnter2->text();//in qstring form, need to convert to int, check
+  QString dayInput =ui->dayEnter->text();//in qstring form, need to convert to int, check
 
   //checks for wrong number of characters
   if(dayInput.length() >2)//TODO: take care of case with one character input
@@ -685,7 +704,7 @@ void MainWindow::wrapDayAtMidnight()
   }
   else if(dayInput.length()==2)
   {
-    dayInt=dayInput.at(0).digitValue() * 10 + dayInput.at(1).digitValue();
+    dayInt= ((dayInput.at(0).digitValue()) * 10) + (dayInput.at(1).digitValue());
   }
   else
   {
@@ -728,4 +747,255 @@ void MainWindow::wrapDayAtMidnight()
   return true;
 }
 
-*/
+
+void MainWindow::writeCalendarString()
+{
+    if(MainWindow::calIsValidInput())
+    {
+        QString s ="Today is ";
+        QString s2;
+
+        int dayOfWeekStart=0;
+        int dayOfWeek=0;//0 represents Sunday, 1->Monday 2->Tuesday 3->Wednesday etc
+
+        if(m_month==1)
+        {
+            s2="January ";
+            dayOfWeekStart=4;//5 represents friday
+        }
+        else if(m_month==2)
+        {
+            s2="Feburary ";
+            dayOfWeekStart=0;
+        }
+        else if(m_month==3)
+        {
+            s2="March ";
+            dayOfWeekStart=1;
+        }
+        else if(m_month==4)
+        {
+            s2="April ";
+            dayOfWeekStart=4;
+        }
+        else if(m_month==5)
+        {
+            s2="May ";
+            dayOfWeekStart=6;
+        }
+        else if(m_month==6)
+        {
+            s2="June ";
+            dayOfWeekStart=2;
+        }
+        else if(m_month==7)
+        {
+            s2="July ";
+            dayOfWeekStart=4;
+        }
+        else if(m_month==8)
+        {
+            s2="August ";
+            dayOfWeekStart=0;
+        }
+        else if(m_month==9)
+        {
+            s2="September ";
+            dayOfWeekStart=3;
+        }
+        else if(m_month==10)
+        {
+            s2="October ";
+            dayOfWeekStart=5;
+        }
+        else if(m_month==11)
+        {
+            s2="November ";
+            dayOfWeekStart=1;
+        }
+        else if(m_month==12)
+        {
+            s2="December ";
+            dayOfWeekStart=3;
+        }
+        else
+        {
+            s2="Invalid Month ";
+        }
+        QString s3;
+        if(m_day==1)//After searching for an hour online to convert an int to a string in QT, a brute force approach was used
+        {
+            s3="1 ";
+        }
+        else if(m_day==2)
+        {
+            s3="2 ";
+        }
+        else if(m_day==3)
+        {
+            s3="3 ";
+        }
+        else if(m_day==4)
+        {
+            s3="4 ";
+        }
+        else if(m_day==5)
+        {
+            s3="5 ";
+        }
+        else if(m_day==6)
+        {
+            s3="6 ";
+        }
+        else if(m_day==7)
+        {
+            s3="7 ";
+        }
+        else if(m_day==8)
+        {
+            s3="8 ";
+        }
+        else if(m_day==9)
+        {
+            s3="9 ";
+        }
+        else if(m_day==10)
+        {
+            s3="10";
+        }
+        else if(m_day==11)
+        {
+            s3="11 ";
+        }
+        else if(m_day==12)
+        {
+            s3="12 ";
+        }
+        else if(m_day==13)
+        {
+            s3="13 ";
+        }
+        else if(m_day==14)
+        {
+            s3="14 ";
+        }
+        else if(m_day==15)
+        {
+            s3="15 ";
+        }
+        else if(m_day==16)
+        {
+            s3="16 ";
+        }
+        else if(m_day==17)
+        {
+            s3="17 ";
+        }
+        else if(m_day==18)
+        {
+            s3="18 ";
+        }
+        else if(m_day==19)
+        {
+            s3="19 ";
+        }
+        else if(m_day==20)
+        {
+            s3="20 ";
+        }
+        else if(m_day==21)
+        {
+            s3="21 ";
+        }
+        else if(m_day==22)
+        {
+            s3="22 ";
+        }
+        else if(m_day==23)
+        {
+            s3="23 ";
+        }
+        else if(m_day==24)
+        {
+            s3="24 ";
+        }
+        else if(m_day==25)
+        {
+            s3="25 ";
+        }
+        else if(m_day==26)
+        {
+            s3="26 ";
+        }
+        else if(m_day==27)
+        {
+            s3="27 ";
+        }
+        else if(m_day==28)
+        {
+            s3="28 ";
+        }
+        else if(m_day==29)
+        {
+            s3="29 ";
+        }
+        else if(m_day==30)
+        {
+            s3="30 ";
+        }
+        else if(m_day==31)
+        {
+            s3="31 ";
+        }
+        else
+        {
+            s3="Invalid Day";
+        }
+
+        QString s4;
+        int dayOfWeekStagger=m_day%7;
+        dayOfWeek= dayOfWeekStart+dayOfWeekStagger;
+        dayOfWeek= dayOfWeek%7;
+
+        if(dayOfWeek==0)
+        {
+            s4="Sunday ";
+        }
+        else if(dayOfWeek==1)
+        {
+            s4="Monday ";
+        }
+        else if(dayOfWeek==2)
+        {
+            s4="Tuesday ";
+        }
+        else if(dayOfWeek==3)
+        {
+            s4="Wednesday ";
+        }
+        else if(dayOfWeek==4)
+        {
+            s4="Thursday ";
+        }
+        else if(dayOfWeek==5)
+        {
+            s4="Friday ";
+        }
+        else if(dayOfWeek==6)
+        {
+            s4="Saturday ";
+        }
+        else if(dayOfWeek==7)
+        {
+            s4="Sunday ";
+        }
+
+        ui-> calendarEdit -> setText(s +  s4 + s2 + s3 + "2016");
+    }
+    else
+    {
+        //QString myQstring=QString::number(m_month); //Debugging
+        ui->calendarEdit->setText("Calendar Input Invalid");
+    }
+}
+
