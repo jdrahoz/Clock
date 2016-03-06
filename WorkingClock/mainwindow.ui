@@ -31,12 +31,12 @@
      <rect>
       <x>-10</x>
       <y>0</y>
-      <width>1171</width>
+      <width>1241</width>
       <height>711</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -893,7 +893,7 @@
        <rect>
         <x>49</x>
         <y>49</y>
-        <width>541</width>
+        <width>571</width>
         <height>591</height>
        </rect>
       </property>
@@ -988,6 +988,18 @@
          <height>211</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>521</width>
+         <height>211</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>651</width>
+         <height>263</height>
+        </size>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="widgetStopwatch" native="true">
@@ -1007,6 +1019,18 @@
          <width>521</width>
          <height>211</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>521</width>
+         <height>211</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>651</width>
+         <height>263</height>
+        </size>
        </property>
       </widget>
       <widget class="QPushButton" name="startButtonStopwatch">
@@ -1058,7 +1082,7 @@
      <x>0</x>
      <y>0</y>
      <width>1460</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
   </widget>

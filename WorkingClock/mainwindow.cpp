@@ -272,33 +272,31 @@ void MainWindow::on_reset_clicked ()
 
 /**
   * Prototyping for new UI functionality
-  * Zoom in, Zoom out, black screen
+  * Zoom in, Zoom out, black screen (implemented in ui file)
   */
 
 void MainWindow::on_zoomIn_clicked()
 {
-    ui -> Display -> resize(1.05 * ui->Display->size());
-    ui -> reset -> resize(1.05 * ui->reset->size());
-    ui -> update -> resize(1.05 * ui->update->size());
-    ui -> am -> resize(1.05 * ui->am->size());
-    ui -> mode -> resize(1.05 * ui->mode->size());
-    ui -> timeEdit -> resize(1.05 * ui->timeEdit->size());
+    ui -> Display -> resize(1.05 * ui->Display->size()); //increase size of main display
+    //ui -> reset -> resize(1.05 * ui->reset->size()); //increase size of reset button
+    //ui -> update -> resize(1.05 * ui->update->size()); //increase size of update button
+    //ui -> am -> resize(1.05 * ui->am->size()); //increase size of AM checkbox
+    //ui -> mode -> resize(1.05 * ui->mode->size()); //increase size of mode checkbox
+    //ui -> timeEdit -> resize(1.05 * ui->timeEdit->size()); //increase size of time edit box
+    ui -> TimerDisplay -> resize(1.05 * ui->TimerDisplay->size()); //increase size of timer display
+    ui -> StopwatchDisplay -> resize(1.05 * ui->StopwatchDisplay->size()); //increase size of stopwatch display
 }
 
 void MainWindow::on_zoomOut_clicked()
 {
-    ui -> Display -> resize(0.95 * ui->Display->size());
-    ui -> reset -> resize(0.95 * ui->reset->size());
-    ui -> update -> resize(0.95 * ui->update->size());
-    ui -> am -> resize(0.95 * ui->am->size());
-    ui -> mode -> resize(0.95 * ui->mode->size());
-    ui -> timeEdit -> resize(0.95 * ui->timeEdit->size());
-}
-
-void MainWindow::on_blackScreen_clicked()
-{
-
-
+    ui -> Display -> resize(0.95 * ui->Display->size()); //decrease size of main display
+    //ui -> reset -> resize(0.95 * ui->reset->size()); //decrease size of reset button
+    //ui -> update -> resize(0.95 * ui->update->size()); //decrease size of update button
+    //ui -> am -> resize(0.95 * ui->am->size()); //decrease size of AM checkbox
+    //ui -> mode -> resize(0.95 * ui->mode->size()); //decrease size of mode checkbox
+    //ui -> timeEdit -> resize(0.95 * ui->timeEdit->size()); //decrease size of time edit box
+    ui -> TimerDisplay -> resize(0.95 * ui->TimerDisplay->size()); //decrease size of timer display
+    ui -> StopwatchDisplay -> resize(0.95 * ui->StopwatchDisplay->size()); //decrease size of stopwatch display
 }
 
 /**
