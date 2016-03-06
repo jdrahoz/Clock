@@ -167,7 +167,10 @@ void MainWindow::startTimer()
     nowTime = hrTime+minTime+secValue;
     ui-> TimerDisplay ->display(nowTime);
     //this function connects the Timer to the system timer.
-    connect (timer, SIGNAL (timeout ()), this, SLOT (updateTimer()));
+    if(nowTime != 0)
+    {
+        connect (timer, SIGNAL (timeout ()), this, SLOT (updateTimer()));
+    }
 }
 
 

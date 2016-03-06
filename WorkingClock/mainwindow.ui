@@ -1106,8 +1106,8 @@
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>860</x>
-     <y>132</y>
+     <x>864</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>791</x>
@@ -1122,12 +1122,92 @@
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>892</x>
-     <y>180</y>
+     <x>896</x>
+     <y>204</y>
     </hint>
     <hint type="destinationlabel">
      <x>789</x>
      <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startButtonTimer</sender>
+   <signal>clicked()</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetButtonTimer</sender>
+   <signal>clicked()</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>454</x>
+     <y>713</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxSec</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>710</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxMin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxHr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>557</y>
     </hint>
    </hints>
   </connection>
