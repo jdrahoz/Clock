@@ -244,6 +244,7 @@ private:
     int m_month;
     int m_day;
     bool m_calendarInitialized;
+
     //stopwatch variables
     bool m_playwatch;
     int m_stopwatchseconds;

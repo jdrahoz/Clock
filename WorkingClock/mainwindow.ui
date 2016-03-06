@@ -912,7 +912,7 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QPushButton" name="hideClock">
+     <widget class="QPushButton" name="hideAll">
       <property name="geometry">
        <rect>
         <x>840</x>
@@ -922,10 +922,10 @@
        </rect>
       </property>
       <property name="text">
-       <string>Hide Clock</string>
+       <string>Hide All</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="showClock">
+     <widget class="QPushButton" name="showAll">
       <property name="geometry">
        <rect>
         <x>840</x>
@@ -935,7 +935,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Show Clock</string>
+       <string>Show All</string>
       </property>
      </widget>
     </widget>
@@ -1285,7 +1285,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>hideClock</sender>
+   <sender>hideAll</sender>
    <signal>pressed()</signal>
    <receiver>widget</receiver>
    <slot>hide()</slot>
@@ -1301,7 +1301,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>showClock</sender>
+   <sender>showAll</sender>
    <signal>pressed()</signal>
    <receiver>widget</receiver>
    <slot>show()</slot>
@@ -1457,6 +1457,38 @@
     <hint type="destinationlabel">
      <x>965</x>
      <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showAll</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetCalender</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>854</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>914</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hideAll</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetCalender</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>888</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>915</x>
+     <y>256</y>
     </hint>
    </hints>
   </connection>
