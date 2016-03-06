@@ -1001,6 +1001,84 @@
         </size>
        </property>
       </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>110</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Second</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>110</y>
+         <width>61</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Minute</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>110</y>
+         <width>61</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Hour</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>550</y>
+         <width>61</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Second</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>550</y>
+         <width>61</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Minute</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>550</y>
+         <width>61</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Hour</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="widgetStopwatch" native="true">
       <property name="geometry">

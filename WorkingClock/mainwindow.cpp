@@ -53,6 +53,8 @@ MainWindow::MainWindow (QWidget *parent) :
     ui->spinBoxMin->setRange(0, 59);
     ui->spinBoxSec->setRange(0, 59);
 
+    startedTimer = false;
+
     //connnecting buttons for the timer
     connect(ui->startButtonTimer, SIGNAL (released()), this, SLOT (startTimer()));
     connect(ui->resetButtonTimer, SIGNAL (released()), this, SLOT (resetTimer()));
@@ -139,7 +141,7 @@ void MainWindow::stopWatchInit()
     m_stopwatchhours=0;
 
     ui->StopwatchDisplay->setSegmentStyle(QLCDNumber::Filled);
-    ui->StopwatchDisplay->setDigitCount(10);
+    ui->StopwatchDisplay->setDigitCount(8);
     ui->StopwatchDisplay->display(temp);
 
     connect (timer, SIGNAL (timeout ()), this, SLOT (updateStopwatch()));
@@ -244,8 +246,9 @@ void MainWindow::startTimer()
     nowTime = hrTime+minTime+secValue;
     ui-> TimerDisplay ->display(nowTime);
     //this function connects the Timer to the system timer.
-    if(nowTime != 0)
+    if(startedTimer == false)
     {
+        startedTimer = true;
         connect (timer, SIGNAL (timeout ()), this, SLOT (updateTimer()));
     }
 }

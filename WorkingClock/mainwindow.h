@@ -205,10 +205,8 @@ private:
     QTimer* timer;
 
     //prototype button additions
-    qreal scale;
     QPushButton *m_zoomIn;
     QPushButton *m_zoomOut;
-    QPushButton *m_blackScreen;
     QPushButton *m_startTimer;
 
     //additional timer variables
@@ -220,6 +218,7 @@ private:
     int secValue;
     int nowTime;
     bool bPauseTime;
+    bool startedTimer;
 
     //calendar variables
     int m_month;
