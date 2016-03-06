@@ -29,14 +29,14 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>0</y>
-      <width>1171</width>
+      <x>-30</x>
+      <y>-10</y>
+      <width>1461</width>
       <height>711</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -893,15 +893,15 @@
        <rect>
         <x>49</x>
         <y>49</y>
-        <width>541</width>
-        <height>591</height>
+        <width>711</width>
+        <height>631</height>
        </rect>
       </property>
       <widget class="QSpinBox" name="spinBoxHr">
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -911,7 +911,7 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -921,7 +921,7 @@
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -931,7 +931,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>530</y>
+         <y>580</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -944,7 +944,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>480</y>
+         <y>530</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -957,7 +957,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>430</y>
+         <y>480</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -970,7 +970,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>380</y>
+         <y>430</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -988,6 +988,18 @@
          <height>211</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>521</width>
+         <height>211</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>651</width>
+         <height>263</height>
+        </size>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="widgetStopwatch" native="true">
@@ -995,25 +1007,37 @@
        <rect>
         <x>620</x>
         <y>50</y>
-        <width>621</width>
+        <width>831</width>
         <height>591</height>
        </rect>
       </property>
       <widget class="QLCDNumber" name="StopwatchDisplay">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>150</x>
          <y>150</y>
          <width>521</width>
          <height>211</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>521</width>
+         <height>211</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>651</width>
+         <height>263</height>
+        </size>
+       </property>
       </widget>
       <widget class="QPushButton" name="startButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>370</y>
+         <x>510</x>
+         <y>420</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1025,8 +1049,8 @@
       <widget class="QPushButton" name="resetButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>470</y>
+         <x>510</x>
+         <y>520</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1038,8 +1062,8 @@
       <widget class="QPushButton" name="stopButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>420</y>
+         <x>510</x>
+         <y>470</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1048,6 +1072,58 @@
         <string>Stop</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>10</y>
+        <width>90</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hide Timer</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>10</y>
+        <width>90</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Timer</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hide Stopwatch</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>10</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Show Stopwatch</string>
+      </property>
      </widget>
     </widget>
    </widget>
@@ -1082,12 +1158,12 @@
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>860</x>
-     <y>132</y>
+     <x>844</x>
+     <y>154</y>
     </hint>
     <hint type="destinationlabel">
-     <x>791</x>
-     <y>361</y>
+     <x>771</x>
+     <y>351</y>
     </hint>
    </hints>
   </connection>
@@ -1098,12 +1174,156 @@
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>892</x>
-     <y>180</y>
+     <x>876</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
-     <x>789</x>
-     <y>246</y>
+     <x>769</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startButtonTimer</sender>
+   <signal>clicked()</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetButtonTimer</sender>
+   <signal>clicked()</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>454</x>
+     <y>713</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxSec</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>710</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxMin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>568</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxHr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>startButtonTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>557</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetTimer</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>118</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>128</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetTimer</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetStopwatch</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>828</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>widgetStopwatch</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>962</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>965</x>
+     <y>113</y>
     </hint>
    </hints>
   </connection>

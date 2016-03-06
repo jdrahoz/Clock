@@ -126,21 +126,14 @@ private slots:
     void on_zoomIn_clicked();
     /**
        *  @pre none
-       *  @post Zooms in on display (increases font)
+       *  @post Zooms in on display (increases widget size)
        *  @return none
        */
 
     void on_zoomOut_clicked();
     /**
        *  @pre none
-       *  @post Zooms out of display (decreases font)
-       *  @return none
-       */
-
-    void on_blackScreen_clicked();
-    /**
-       *  @pre none
-       *  @post Turns off the display, leaving a black screen
+       *  @post Zooms out of display (decreases widget size)
        *  @return none
        */
 
