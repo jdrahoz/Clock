@@ -1,7 +1,9 @@
 /**
 *	@file mainwindow.cpp
 * 	@author Quinten Wiley, Julia Drahozal, Omar Alzubbi, Kate Strombom
-*	@date 2016.02.12
+*           Edited by: Will Teeple, Michael Wang, Austin Bailey, Tim Elvart
+*	@date 2016.02.12 created
+*         2016.2.6 edited last
 *
 */
 #include "mainwindow.h"
@@ -76,26 +78,31 @@ MainWindow::~MainWindow ()
 // ------------------------------- INIT -------------------------------
 // --------------------------------------------------------------------
 
+//tells the stopwatch to continue advancing its count
 void MainWindow::playStopwatch()
 {
     m_playwatch=true;
 }
 
+//tells the stopwatch to stop advancing its count
 void MainWindow::pauseStopwatch()
 {
     m_playwatch=false;
 }
 
+//resets the stopwatch at 0:0:0
 void MainWindow::resetStopwatch()
 {
     m_playwatch=false;
-    m_stopwatchseconds=00;
-    m_stopwatchminutes=00;
-    m_stopwatchhours=00;
-    QString temp="00:00:00";
+    m_stopwatchseconds=0;
+    m_stopwatchminutes=0;
+    m_stopwatchhours=0;
+    QString temp="0:0:0";
+
     ui->StopwatchDisplay->display(temp);
 }
 
+//advances time in the stopwatch and displays it
 void MainWindow::updateStopwatch()
 {
     if (m_playwatch==true)
@@ -106,15 +113,15 @@ void MainWindow::updateStopwatch()
         {
             m_stopwatchminutes++;
             m_stopwatchseconds=0;
+
             if (m_stopwatchminutes>59)
             {
                 m_stopwatchhours++;
                 m_stopwatchminutes=0;
-
             }
         }
-          stopWatchString=QString::number(m_stopwatchhours) + ":" + QString::number(m_stopwatchminutes) + ":" + QString::number(m_stopwatchseconds);
-          ui->StopwatchDisplay->display(stopWatchString);
+          m_stopWatchString=QString::number(m_stopwatchhours) + ":" + QString::number(m_stopwatchminutes) + ":" + QString::number(m_stopwatchseconds);
+          ui->StopwatchDisplay->display(m_stopWatchString);
     }
     else
     {
@@ -122,17 +129,19 @@ void MainWindow::updateStopwatch()
     }
 }
 
+//initialize stopwatch variables, connections, and ui properties
 void MainWindow::stopWatchInit()
 {
     m_playwatch= false;
-    QString temp="00:00:00";
+    QString temp="0:0:0";
     m_stopwatchseconds=0;
-    m_stopwatchminutes=59;
+    m_stopwatchminutes=0;
     m_stopwatchhours=0;
 
     ui->StopwatchDisplay->setSegmentStyle(QLCDNumber::Filled);
     ui->StopwatchDisplay->setDigitCount(10);
     ui->StopwatchDisplay->display(temp);
+
     connect (timer, SIGNAL (timeout ()), this, SLOT (updateStopwatch()));
 }
 

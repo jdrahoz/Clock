@@ -3,7 +3,7 @@
 * 	@author Quinten Wiley, Julia Drahozal, Omar Alzubbi, Kate Strombom
 *       edited by Austin Bailey, Tim Elvart, Will Teeple, Michael Wang
 *	@date 2016.02.12 created
-*         2016.03.03 edited last
+*         2016.03.06 edited last
 */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -32,14 +32,39 @@ public:
 
 private slots:
 
+    //EVENT HANDLERS
 
     void playStopwatch();
+    /**
+     * @pre none
+     * @post tells the stopwatch to start advancing again
+     * @return none
+     */
     void pauseStopwatch();
+    /**
+     * @pre none
+     * @post pauses the stopwatch advancement
+     * @return none
+     */
     void resetStopwatch();
+    /**
+     * @pre none
+     * @post the stopwatch is reset to 0:0:0 and paused
+     * @return none
+     */
     void updateStopwatch();
+    /**
+     * @pre none
+     * @post called after 1 second has passed in system timer.
+     *  updates according member variables and displays the current time count
+     * @return none
+     */
     void stopWatchInit();
-
-    // EVENT HANDLERS
+    /**
+     * @pre none
+     * @post stopwatch member variables are initialized, QT ui connections established. "0:0:0" is displayed
+     * @return none
+     */
     void playTimer();
     /**
        *  @pre none
@@ -203,6 +228,7 @@ private:
     int nowTime;
     bool bPauseTime;
 
+    //calendar variables
     int m_month;
     int m_day;
 
@@ -211,7 +237,7 @@ private:
     int m_stopwatchseconds;
     int m_stopwatchminutes;
     int m_stopwatchhours;
-    QString stopWatchString;
+    QString m_stopWatchString;
 
 };
 
