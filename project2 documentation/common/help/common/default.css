@@ -1,0 +1,1858 @@
+/*
+ ----------------------------------------------------------------->
+  General tags
+ ----------------------------------------------------------------->
+*/
+
+BODY
+{
+	background-color: white;
+	color: #000;
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	margin:0px;
+}
+
+TD
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Content link
+ ----------------------------------------------------------------->
+*/
+
+A
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}
+
+A:active
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}
+
+A:link
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}
+
+/*A:visited
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}*/
+
+A:hover
+{
+	font-weight:normal;
+	text-decoration: underline;
+	color: #045;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Tabs
+ ----------------------------------------------------------------->
+*/
+
+/*-----------------------
+  Stuff for the tabs
+-----------------------*/
+
+/* When the Tabs are active */
+.tabActive
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#000;
+
+	border-bottom-style:none;
+	border-bottom-width:0px;
+
+	padding-left:4px;
+	padding-right:4px;
+
+	margin-right:2px;
+
+	background-color:#acd;
+}
+
+/* When the Tabs are inactive */
+.tabInActive
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#000;
+
+	border-bottom-style:none;
+	border-bottom-width:0px;
+
+	padding-left:4px;
+	padding-right:4px;
+
+	margin-right:2px;
+
+	background-color:#ddd;
+}
+
+/* When the Tabs are active and no content on*/
+.tabActiveGrayout
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#aaa;
+
+	border-bottom-style:none;
+	border-bottom-width:0px;
+
+	padding-left:4px;
+	padding-right:4px;
+
+	margin-right:2px;
+
+	background-color:#acd;
+}
+
+/* When the Tabs are inactive and no content on*/
+.tabInActiveGrayout
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#aaa;
+
+	border-bottom-style:none;
+	border-bottom-width:0px;
+
+	padding-left:4px;
+	padding-right:4px;
+
+	margin-right:2px;
+
+	background-color:#ddd;
+}
+
+/* Hmmm! Hack for getting IE and Opera to show the upper border of the tabs */
+TD.tabFix
+{
+	padding-top:1px;
+}
+
+/*-----------------
+  Link for the tabs
+-----------------*/
+
+A.tabLinkActive
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.tabLinkActive:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.tabLinkActive:hover
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+
+A.tabLinkInActive
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.tabLinkInActive:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.tabLinkInActive:hover
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+.tabLinkGrayout
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #aaa;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Path
+ ----------------------------------------------------------------->
+*/
+
+/*-----------------
+  Link for the path
+-----------------*/
+
+A.pathLink
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.pathLink:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.pathLink:hover
+{
+	font-weight:bold;
+	text-decoration: underline;
+	color: #045;
+}
+
+/*-----------------
+  Non Link for the path
+-----------------*/
+
+.pathNonLink
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+/*-----------------
+  Position and stuff for the path
+-----------------*/
+
+/* Path through site */
+.path
+{
+	padding-top:6px;
+	padding-left:10px;
+}
+
+.path-arrow
+{
+	margin-left:4px;
+	margin-right:4px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Show/Hide Other doxygen Links
+  Link for the Show/Hide Other Links
+ ----------------------------------------------------------------->
+*/
+
+/*------------------------------------
+  Links for other doxygen Links
+------------------------------------*/
+
+A.showHideOtherLinks
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.showHideOtherLinks:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.showHideOtherLinks:hover
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+
+A.otherLinks
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.otherLinks:visited
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.otherLinks:hover
+{
+	font-weight:normal;
+	text-decoration: underline;
+	color: #045;
+}
+
+/*------------------------------------
+  Stuff for the Other doxygen Links
+------------------------------------*/
+
+.otherLinksSeparatorPadding
+{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  LeftMenu (the navigation menu)
+ ----------------------------------------------------------------->
+*/
+
+/*---------------------
+  Link for the leftMenu
+---------------------*/
+
+A.leftMenuLinkHeadActive
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkHeadActive:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkHeadActive:hover
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+
+A.leftMenuLinkHeadInActive
+{
+	font-size: 12px;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkHeadInActive:visited
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkHeadInActive:hover
+{
+	font-weight:bold;
+	text-decoration: none;
+	color: #000;
+}
+
+
+A.leftMenuLinkActive
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkActive:visited
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkActive:hover
+{
+	font-weight:normal;
+	text-decoration: underline;
+	color: #045;
+}
+
+
+A.leftMenuLinkInActive
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkInActive:visited
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #000;
+}
+
+A.leftMenuLinkInActive:hover
+{
+	font-weight:normal;
+	text-decoration: underline;
+	color: #c40;
+}
+
+/*--------------------------------
+  Stuff for the leftMenu treeview 
+-----------------------------------*/
+
+/* When the leftMenu is active */
+.leftMenuTreeActive
+{
+ border-bottom-style:none;
+ border-bottom-width:1px;
+ border-bottom-color:#bbb;
+
+ padding-left:0px;
+ padding-right:4px;
+ padding-top:1px;
+ padding-bottom:1px;
+
+ background-color:#acd;
+}
+
+/* When the leftMenu is inactive */
+.leftMenuTreeInActive
+{
+ padding-left:0px;
+ padding-right:4px;
+ padding-top:1px;
+ padding-bottom:1px;
+
+ border-bottom-style:none;
+ border-bottom-width:1px;
+ border-bottom-color:#bbb;
+}
+
+/* When the leftMenu is active */
+.headerLeftMenuTreeActive
+{
+ border-bottom-style:none;
+ border-bottom-width:1px;
+ border-bottom-color:#000;
+
+ padding-left:0px;
+ padding-right:4px;
+
+ background-color:#acd;
+}
+
+.headerLeftMenuTreeInActive
+{
+ border-bottom-style:none;
+ border-bottom-width:1px;
+ border-bottom-color:#000;
+
+ padding-left:0px;
+ padding-right:4px;
+
+ background-color:#ddd;
+}
+/*---------------------
+  Stuff for the leftMenu
+---------------------*/
+
+/* When the leftMenu is active */
+.leftMenuActive
+{
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	padding-left:10px;
+	padding-right:4px;
+	padding-top:1px;
+	padding-bottom:1px;
+
+	background-color:#acd;
+}
+
+/* When the leftMenu is inactive */
+.leftMenuInActive
+{
+	padding-left:10px;
+	padding-right:4px;
+	padding-top:1px;
+	padding-bottom:1px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+/* When the leftMenu is active */
+.headerLeftMenuActive
+{
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+
+	padding-left:10px;
+	padding-right:4px;
+
+	background-color:#acd;
+}
+
+.headerLeftMenuInActive
+{
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+
+	padding-left:10px;
+	padding-right:4px;
+
+	background-color:#ddd;
+}
+
+.vSpaceLeftMenu
+{
+	padding-top:0px;
+/*	padding-top:16px; */ Example
+}
+
+/* For use on headers in the leftMenu */
+.paragraphLeftMenu
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:10px;
+	padding-right:4px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+}
+
+/* For use on tables HEADLINES in directory overview tab so it maches the left menu (above)*/
+TD.dirOverviewHeader1
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:3px;
+	padding-right:4px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	background-color:#f0f0f0;
+}
+
+/* For use on tables HEADLINES (last cell) in directory overview tab so it maches the left menu (above)*/
+TD.dirOverviewHeader2
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:3px;
+	padding-right:4px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+
+	background-color:#f0f0f0;
+}
+
+/* For use on tables NORMAL CELLS in directory overview tab so it maches the left menu (above)*/
+TD.dirOverviewCell1
+{
+	padding:1px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	background-color:#ffffff;
+}
+
+/* For use on tables NORMAL CELLS (last cell) in directory overview tab so it maches the left menu (above)*/
+TD.dirOverviewCell2
+{
+	padding:1px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-right-style:solid;
+	border-right-width:0px;
+	border-right-color:#bbb;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	background-color:#ffffff;
+}
+
+/* Used for making the frame around the body */
+.frameLeftMenu
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#000;
+
+	border-left-style:none;
+	border-left-width:0px;
+
+	margin-bottom:14px;
+}
+
+/* To add some air in the bottom of the left menu */
+.leftMenuAirBottom
+{
+	height:10px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Header
+ ----------------------------------------------------------------->
+*/
+
+/* Setting the font for the header of the page */
+.headerPage
+{
+	font-size: 18px;
+	font-weight:bold;
+	padding-left:10px;
+}
+
+/* Setting the background color for the top */
+.headerBox
+{
+	background-color:#8bc;
+	background-color:#acd;
+	padding-top:6px;
+	padding-bottom:12px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000;
+}
+
+.logo
+{
+	padding-left:0px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  TABLE WITH BORDER in content
+ ----------------------------------------------------------------->
+*/
+
+/* Border for member tables */
+
+TABLE.widthAndBorderTop
+{
+	width:100%;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:#bbb;
+}
+
+TABLE.widthAndBorderTopLeftRight
+{
+	width:100%;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:#bbb;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-left-color:#bbb;
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+}
+
+TABLE.widthAndBorderMembers
+{
+	width:94%;
+	border-style:solid;
+	border-width:1px;
+	border-color:#bbb;
+	border-bottom-style:none;
+	border-bottom-width:0px;
+	border-bottom-color:#fff;
+}
+
+/* Border fix so it looks nice ;-)
+   For the content in the table. Except for the last one, use paddingNormal2 for that one. */
+TD.paddingNormal1
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+/* Border fix so it looks nice ;-)*/
+TD.paddingNormal2
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+TD.paddingHeadReturnValue
+{
+	font-weight:bold;
+
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+TD.paddingHeadBlank
+{
+	padding:2px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+TD.paddingHeadMultiColumn1
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	background-color:#f0f0f0;
+}
+
+TD.paddingHeadMultiColumn2
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	background-color:#f0f0f0;
+}
+
+TD.oneLine
+{
+	padding:0px;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+
+/*
+ ----------------------------------------------------------------->
+  TABLE USER WITH BORDER in content
+ ----------------------------------------------------------------->
+*/
+
+/* Border for member tables */
+
+TABLE.userTableBorder
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#bbb;
+	border-bottom-style:none;
+	border-bottom-width:0px;
+	border-bottom-color:#fff;
+}
+
+/* Border fix so it looks nice ;-)
+   For the content in the table. Except for the last one, use paddingNormal2 for that one. */
+TD.userPaddingNormal1
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+/* Border fix so it looks nice ;-)*/
+TD.userPaddingNormal2
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+TD.userPaddingHeadMultiColumn1
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:#bbb;
+
+	background-color:#f0f0f0;
+}
+
+TD.userPaddingHeadMultiColumn2
+{
+	padding:2px;
+	padding-left:3px;
+	padding-right:3px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+
+	background-color:#f0f0f0;
+}
+
+TD.userOneLine
+{
+	padding:0px;
+
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#bbb;
+}
+
+
+/*
+ ----------------------------------------------------------------->
+  UserContent
+ ----------------------------------------------------------------->
+*/
+
+/* User paragraph 1 This one you can set from doxygen */
+.userParagraph1
+{
+	font-size: 16px;
+	font-weight:bold;
+	padding-left:0px;
+	color:#000;
+}
+
+/* User paragraph 2 This one you can set from doxygen */
+.userParagraph2
+{
+	font-size: 14px;
+	font-weight:bold;
+	padding-left:0px;
+	color:#000;
+}
+
+/* User paragraph 3 This one you can set from doxygen */
+.userParagraph3
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-left:0px;
+	color:#000;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Content
+ ----------------------------------------------------------------->
+*/
+
+/* Paragraph 1 is the header on the pages */
+.paragraph1
+{
+	font-size: 18px;
+	font-weight:bold;
+	padding-top:0px;
+	padding-left:4px;
+}
+
+/* Paragraph 2 This is the small bold paragraph on a page */
+.paragraph2
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:4px;
+}
+
+/* Paragraph 2 This is the small bold paragraph on a page */
+.paragraph2NoTopPadding
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-left:4px;
+}
+
+/* For use as a paragraph over a table */
+.paragraphTable
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:0px;
+}
+
+/* Used for the paragraph over an example block */
+.paragraphExamples
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:0px;
+}
+
+/* For use as a paragraph the See Also block */
+.paragraphSeeAlso
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:0px;
+}
+
+/* Used for the paragraph over an syntax block */
+.paragraphSyntax
+{
+	font-size: 12px;
+	font-weight:bold;
+	padding-top:12px;
+	padding-left:0px;
+}
+
+/* Search info text */
+.searchInfoText
+{
+	font-size: 12px;
+	font-weight:bold;
+}
+
+/* Used for the code in an example block */
+.codeExamples
+{
+	font-family: Courier, Arial;
+
+	padding-left:0px;
+	padding-right:4px;
+	margin:0px;
+
+	background-color:#f0f0f0;
+}
+
+/* To add space between the columns in a syntax table*/
+.functionSyntaxTable
+{
+	padding-right:14px;
+}
+
+/* To add space between the columns in search options*/
+.searchOptionsSpace
+{
+	width:8px;
+}
+
+/* Sets the font to a code font*/
+.codeFont
+{
+	font-family: Courier, Arial;
+}
+
+/* Used for adding some space from the left and right so the text gets away from the frame in the content. This is done many places for different tags */
+.padding
+{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+/* Used for adding some space from the left and right so the member content gets away from the frame. This is done many places for different tags */
+.paddingMembers
+{
+	padding-left:30px;
+	padding-right:4px;
+}
+
+/* Used for adding some space from the left, right and top so that author and version gets away from the frame and the top. */
+.paddingAuthor
+{
+	padding-left:30px;
+	padding-right:4px;
+	padding-top:2px;
+}
+
+/* Used for adding some space from the left and right to the table */
+.paddingMembersTableDiv
+{
+	padding-left:30px;
+	padding-right:4px;
+}
+
+/* Deprecated padding This is the text for Deprecated */
+.depPadding
+{
+	font-weight:bold;
+	padding-left:30px;
+	color:#f00;
+}
+
+/* Explain Anonymous This is the text for ExplainAnonymous */
+.explainAnonymous
+{
+	color:#600;
+}
+
+/* Used for setting the width of all content tables!! */
+TABLE.width
+{
+	width:100%;
+}
+
+/* Used for getting some space around the body */
+.sideIndent
+{
+	width:18px;
+	height:1px;
+}
+
+/* Used for making the frame around the content */
+.frame
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#000;
+
+	margin-bottom:4px;
+}
+
+#MainContentFrame
+{
+	overflow-y:auto; 
+	overflow-x:hidden;
+}
+
+
+/* Addes space from the page header to the tabs */
+.headerVSpaceToTab
+{
+	height:18px;
+}
+
+/* Addes space from the frame to the first line */
+.contentAirTop
+{
+	font-size: 1px; /* So the font don't have influence on height: */
+	height:14px;
+}
+
+/* Addes space from the bottom line to the frame */
+.contentAirBottom
+{
+	font-size: 1px; /* So the font don't have influence on height: */
+	height:14px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Footer
+ ----------------------------------------------------------------->
+*/
+
+.doxygenFooter
+{
+	margin-bottom:18px;
+}
+
+
+A.generatedDoxygen
+{
+	font-size: 12px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}
+
+A.generatedDoxygen:visited
+{
+	font-weight:normal;
+	text-decoration: none;
+	color: #c40;
+}
+
+A.generatedDoxygen:hover
+{
+	font-weight:normal;
+	text-decoration: underline;
+	color: #045;
+}
+
+/*
+ ----------------------------------------------------------------->
+  OL and UL indent
+ ----------------------------------------------------------------->
+*/
+
+OL
+{
+  margin-left:31px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+UL
+{
+  margin-left:25px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+UL UL
+{
+  margin-left:16px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+OL OL
+{
+  margin-left:23px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+UL OL
+{
+  margin-left:24px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+OL UL
+{
+  margin-left:16px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-left:0px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Legend colors
+ ----------------------------------------------------------------->
+*/
+
+.legendColorBlackBox
+{
+	background-color:#000000;
+	color:#ffffff;
+	border-color:#000000;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorBlack
+{
+	border-color:#000000;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorGray
+{
+	border-color:#bfbfbf;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorRed
+{
+	border-color:#ff0000;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorDarkBlue
+{
+	background-color:#191970;
+	border-color:#191970;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorDarkGreen
+{
+	background-color:#006400;
+	border-color:#006400;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorDarkRed
+{
+	background-color:#8b1a1a;
+	border-color:#8b1a1a;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorPurple
+{
+	background-color:#9832cd;
+	border-color:#9832cd;
+	border-style:solid;
+	border-width:1px;
+}
+
+.legendColorDarkYellow
+{
+	background-color:#ffa200;
+	border-color:#ffa200;
+	border-style:solid;
+	border-width:1px;
+}
+
+LI.legend
+{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Rulers
+ ----------------------------------------------------------------->
+*/
+
+.hrThin
+{
+	background-color:#bbb;
+	height:1px;
+	width:100%;
+	margin-top:10px;
+	margin-bottom:8px;
+}
+
+.hrFat
+{
+	background-color:#bbb;
+	height:2px;
+	width:100%;
+	margin-top:10px;
+	margin-bottom:8px;
+}
+
+
+/*
+ ----------------------------------------------------------------->
+  LANGAUGE
+ ----------------------------------------------------------------->
+*/
+
+.defaultLangauge
+{
+	color:#600;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Homepage
+ ----------------------------------------------------------------->
+*/
+
+.errText
+{
+	color:#f00;
+	font-weight:bold;
+}
+
+.errTable
+{
+	border-style:solid;
+	border-width:2px;
+	border-color:#f00;
+}
+
+/*
+ ----------------------------------------------------------------->
+  Statistics
+ ----------------------------------------------------------------->
+*/
+
+TD.timerTable
+{
+	width:200px;
+}
+
+/*
+ -----------------------------------------------------------------
+  Treeview 
+ -----------------------------------------------------------------
+*/
+/*Main left menu tree DIV (including the expand/collapse links) */
+#treeLeftMenu {
+}
+
+/* Scrolling part of left menu tree (not including the expand/collapse links ) */
+#treeLeftMenu_tree {
+}
+
+.parentTreeNode {
+	color: #000000;
+	font-size:xx-small;
+	text-decoration: none;
+	border: 1px solid transparent;
+	padding: 0px 5px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.parentTreeNode:link {
+	color: #000000;
+	font-size:xx-small;
+	text-decoration: none;
+	border: 1px solid transparent;
+	padding: 0px 5px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.parentTreeNode:hover {
+	color: #666666;
+	border: 1px solid #000000;
+	background-color: #EEEEEE;
+	color: #c40;
+	outline-style:solid;
+	text-decoration: none;
+	padding: 0px 3px 0px 3px;
+}
+
+
+
+/* visited property give lots of trouble .. :-( */
+/*.parentTreeNode:visited {
+	color: #000000;
+	color: #000000;
+	font-size:xx-small;
+	text-decoration: none;
+	border: 1px solid transparent;
+	padding: 0px 3px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}*/
+
+
+.normalTreeNode {
+	color: #000000;
+	font-size:xx-small;
+	text-decoration: none;
+	border: 1px solid transparent;
+	display: block;
+	padding: 0px 3px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.normalTreeNode:link
+{
+	color: #000000;
+	font-size:xx-small;
+	text-decoration: none;
+	border: 1px solid transparent;
+	display: block;
+	padding: 0px 3px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.normalTreeNode:hover {
+	color: #666666;
+	border: 1px solid #000000;
+	background-color: #EEEEEE;
+	color: #c40;
+	text-decoration: none;
+}
+
+.expandCollapse {
+	color: #000000;
+	font-size:xx-small;
+	border: 1px solid transparent;
+	padding: 0px 3px 0px 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.expandCollapse:hover {
+	color: #666666;
+	background-color: #EEEEEE;
+	border: 1px solid #000000;
+	text-decoration: underline;
+}
+
+/*
+-----------------------
+--- Main Containers ---
+-----------------------
+*/
+
+.containerLeftMenu {
+	min-width:50px;
+	max-width:400px;
+}
+
+.containerMainContent {
+	width:100%;
+}
+
+
+/* 
+----------------------------------
+--- JQyery CSS (Redmond theme) ---
+----------------------------------
+*/
+
+/*
+ * jQuery UI CSS Framework @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+
+/*
+ * jQuery UI Accordion @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */
+/* IE/Win - Fix animation bug - #4615 */
+.ui-accordion { width: 100%; }
+.ui-accordion .ui-accordion-header { cursor: pointer; position: relative; margin-top: 1px; zoom: 1; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-content-active { display: block; }
+
+/*
+ * jQuery UI Tabs @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+
+
+
+/*
+ * jQuery UI CSS Framework @VERSION
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Lucida%20Grande,%20Lucida%20Sans,%20Arial,%20sans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=5px&bgColorHeader=5c9ccc&bgTextureHeader=12_gloss_wave.png&bgImgOpacityHeader=55&borderColorHeader=4297d7&fcHeader=ffffff&iconColorHeader=d8e7f3&bgColorContent=fcfdfd&bgTextureContent=06_inset_hard.png&bgImgOpacityContent=100&borderColorContent=a6c9e2&fcContent=222222&iconColorContent=469bdd&bgColorDefault=dfeffc&bgTextureDefault=02_glass.png&bgImgOpacityDefault=85&borderColorDefault=c5dbec&fcDefault=2e6e9e&iconColorDefault=6da8d5&bgColorHover=d0e5f5&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=79b7e7&fcHover=1d5987&iconColorHover=217bc0&bgColorActive=f5f8f9&bgTextureActive=06_inset_hard.png&bgImgOpacityActive=100&borderColorActive=79b7e7&fcActive=e17009&iconColorActive=f9bd01&bgColorHighlight=fbec88&bgTextureHighlight=01_flat.png&bgImgOpacityHighlight=55&borderColorHighlight=fad42e&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=02_glass.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+ */
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget { font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1.1em; }
+.ui-widget .ui-widget { font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1em; }
+/*.ui-widget-content { border: 1px solid #a6c9e2; background: #fcfdfd url(ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x; color: #222222; }*/
+.ui-widget-content { border: 1px solid #a6c9e2; background: #fcfdfd; color: #222222; }
+/*.ui-widget-content a { color: #222222; } */
+/*.ui-widget-header { border: 1px solid #4297d7; background: #FFFFFF url(ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }*/
+.ui-widget-header { border: 1px solid #4297d7; background: #FFFFFF color: #ffffff; font-weight: bold; }
+/*.ui-widget-header a { color: #ffffff; }*/
+
+/* Interaction states
+----------------------------------*/
+/*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #c5dbec; background: #ddd url(ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #000000; }*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #c5dbec; background: #ddd; font-weight: bold; color: #000000; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #000000; text-decoration: none; }
+/*.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c5dbec; background: #ddd url(ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #000000; }*/
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c5dbec; background: #ddd; font-weight: bold; color: #000000; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #000000; text-decoration: none; }
+/*.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #79b7e7; background: #acd url(ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #000000; }*/
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #79b7e7; background: #acd; font-weight: bold; color: #000000; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #000000; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fad42e; background: #fbec88 url(ui-bg_flat_55_fbec88_40x100.png) 50% 50% repeat-x; color: #363636; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x; color: #cd0a0a; }
+.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #cd0a0a; }
+.ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary { font-weight: bold; }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { width: 16px; height: 16px; background-image: url(ui-icons_469bdd_256x240.png); }
+.ui-widget-content .ui-icon {background-image: url(ui-icons_469bdd_256x240.png); }
+.ui-widget-header .ui-icon {background-image: url(ui-icons_d8e7f3_256x240.png); }
+.ui-state-default .ui-icon { background-image: url(ui-icons_6da8d5_256x240.png); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(ui-icons_217bc0_256x240.png); }
+.ui-state-active .ui-icon {background-image: url(ui-icons_f9bd01_256x240.png); }
+.ui-state-highlight .ui-icon {background-image: url(ui-icons_2e83ff_256x240.png); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(ui-icons_cd0a0a_256x240.png); }
+
+/* positioning */
+.ui-icon-carat-1-n { background-position: 0 0; }
+.ui-icon-carat-1-ne { background-position: -16px 0; }
+.ui-icon-carat-1-e { background-position: -32px 0; }
+.ui-icon-carat-1-se { background-position: -48px 0; }
+.ui-icon-carat-1-s { background-position: -64px 0; }
+.ui-icon-carat-1-sw { background-position: -80px 0; }
+.ui-icon-carat-1-w { background-position: -96px 0; }
+.ui-icon-carat-1-nw { background-position: -112px 0; }
+.ui-icon-carat-2-n-s { background-position: -128px 0; }
+.ui-icon-carat-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 0 -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-off { background-position: -96px -144px; }
+.ui-icon-radio-on { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-tl { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; }
+.ui-corner-tr { -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; }
+.ui-corner-bl { -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; }
+.ui-corner-br { -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
+.ui-corner-top { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; }
+.ui-corner-bottom { -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
+.ui-corner-right {  -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
+.ui-corner-left { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; }
+.ui-corner-all { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+
+/* Overlays */
+.ui-widget-overlay { background: #aaaaaa url(ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+

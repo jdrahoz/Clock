@@ -1,0 +1,29 @@
+------------------------------------
+--- Release 1.15, September 2010 ---
+------------------------------------
+ 
+Installing DoxyS is very easy:
+
+!For Windows
+Just copy the executable #doxys.exe# C:/windows/system32$, or some 
+other directory which is in your path, and you're ready to go!
+
+!For Linux (Unix)
+Just copy the executable #doxys# to $/usr/bin$, or some 
+other directory which is in your path, and you're ready to go!
+Or you can run the install script!
+
+
+To create the help/manual type: 'doxys -m' at a command promt or 
+visit our homepage at www.doxys.dk for more information.
+
+To create documentation for your project type 'doxys' at the root of 
+your source code directory.
+
+If you have problems, comments or you want to help us, please contact us via 
+the contact page on our homepage. Alternatively send a mail to info@doxys.dk .
+
+Enjoy!
+
+Regards the DoxyS team.
+

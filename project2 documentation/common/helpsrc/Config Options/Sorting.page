@@ -1,0 +1,10 @@
+/** \page Sorting
+
+!!! Options to control whether the various list displayed are alphabetized (sorted)
+.
+
+or left in the order they were found i the source files or otherwise specified (groups)
+
+||SORT_GROUPS|Alphabetize the order groups are displayed within their parent directory or (class not implemented yet) Set to FALSE to leave in source code order.\n #Default value:#\n $YES$
+||SORT_GROUP_MEMBERS|Alphabetize the order of members in a group. Set to FALSE to leave in source code order.\n #Default value:#\n $YES$
+*/

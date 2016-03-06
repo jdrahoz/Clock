@@ -1,0 +1,67 @@
+/** 
+\page examplesgroupCmd 
+!!! Define a examples group documentaion block
+This command defines a examples group, much like a page (defgroupCmd) or unit (unitCmd). 
+The difference is that example groups can contain source code examples which are related 
+to the directory in which the groups is defined. 
+
+
+!Syntax:
+\code
+\examplesgroup MyGroup
+\examplesgroup "Group name with spaces"
+\endcode
+
+Example groups are tied to the directory they are specified in and have their own 'tab' 
+on directory pages (far right).  
+
+!Layout
+To control the layout we have the EXAMPLE_GROUP_USE_TABS option, which controls wheter 
+the examples are show as classic overview tables or using tab for each example group, and 
+again a tab for each example within a group. Default is to show using tabs. 
+For the standard examples both in example groups and all other entities we also 
+have two options for showing the examples using EXAMPLES_USE_TABS. If set to 
+YES (default), DoxyS will display examples on all pages as tabs. If set to NO 
+examples will be shown (classical) using expand/collapse icons.
+
+!Adding examples to a group
+Examples are added to an example group like examples for classes, pages, functions etc. 
+using the \\example (exampleCmd) command. 
+
+!DoxyS.ignore
+When including examples using a line like this:
+\code
+\example _examples/included_example_1.cpp
+\endcode
+It might a good idea to exclude the '_examples' directory using a 'DoxyS.ignore' 
+file with content like this:
+\code
+_examples
+\endcode
+
+
+\example
+/**
+\examplesgroup "My examples"
+This is the breif description of the examples group.
+More description here.
+
+\ example
+void someFunction()
+{
+	float iFloat = 10.4;
+	OverloadedInGroup( iFloat );
+	Set( iFloat, 4.5 );
+}
+\ endexample
+
+\ example _examples/included_example_1.cpp
+\endds_doc
+\endexample
+
+\see exampleCmd
+
+\note Autolinking to examples group names with spaces. Remember to put the examples group name in quotation marks 
+      to name groups in the place where you refer to the examples group just like with directories. E.g. 
+      '... you can also go to "My examples group with spaces" to see the ....'
+*/
