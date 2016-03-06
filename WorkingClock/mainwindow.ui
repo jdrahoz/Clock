@@ -73,6 +73,9 @@
          <height>22</height>
         </rect>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
@@ -120,6 +123,12 @@
         </rect>
        </property>
       </widget>
+      <zorder>calendarButton</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_8</zorder>
+      <zorder>monthEnter</zorder>
+      <zorder>dayEnter</zorder>
+      <zorder>calendarEdit</zorder>
      </widget>
      <widget class="QWidget" name="widget" native="true">
       <property name="geometry">

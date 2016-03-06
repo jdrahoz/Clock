@@ -400,7 +400,7 @@ void MainWindow::showTime ()
 {
 
     // format string for display
-    wrap12hour ();
+    //wrap12hour ();
     QString textTime = currTime.toString (Qt::TextDate);
 
     // 24 hour
@@ -506,13 +506,13 @@ void MainWindow::updateAMPM ()
 
 void MainWindow::wrap12hour ()
 {
+       int sec = currTime.second ();
+       int min = currTime.minute ();
+       int hour = currTime.hour ();
 
     if (currMode == 1)
     {
 
-        int sec = currTime.second ();
-        int min = currTime.minute ();
-        int hour = currTime.hour ();
 
         // wrap for pm
         if (hour > 12)
@@ -526,11 +526,16 @@ void MainWindow::wrap12hour ()
             currTime = QTime (12, min, sec);
             ampm = 0;
             //addittion for calendar
-            if(m_calendarInitialized)
-            {
-                wrapDayAtMidnight();
-                MainWindow::writeCalendarString();
-            }
+
+        }
+    }
+
+    if((hour==0)&&(min==0)&&(sec==0))
+    {
+        if(m_calendarInitialized)
+        {
+            wrapDayAtMidnight();
+            writeCalendarString();
         }
     }
 }
@@ -741,9 +746,14 @@ bool MainWindow::calIsValidInput ()
   {
     return false;
   }
+
+  if(!m_calendarInitialized)
+  {
   m_month=monthInt;
   m_day=dayInt;
   m_calendarInitialized=true;
+  }
+
   return true;
 }
 
