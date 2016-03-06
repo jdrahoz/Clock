@@ -88,22 +88,51 @@ void MainWindow::pauseStopwatch()
 
 void MainWindow::resetStopwatch()
 {
-    m_stopwatchseconds=0;
-    m_stopwatchminutes=0;
-    m_stopwatchhours=0;
+    m_playwatch=false;
+    m_stopwatchseconds=00;
+    m_stopwatchminutes=00;
+    m_stopwatchhours=00;
+    QString temp="00:00:00";
+    ui->StopwatchDisplay->display(temp);
 }
 
 void MainWindow::updateStopwatch()
 {
+    if (m_playwatch==true)
+    {
+        m_stopwatchseconds++;
 
+        if (m_stopwatchseconds>59)
+        {
+            m_stopwatchminutes++;
+            m_stopwatchseconds=0;
+            if (m_stopwatchminutes>59)
+            {
+                m_stopwatchhours++;
+                m_stopwatchminutes=0;
+
+            }
+        }
+          stopWatchString=QString::number(m_stopwatchhours) + ":" + QString::number(m_stopwatchminutes) + ":" + QString::number(m_stopwatchseconds);
+          ui->StopwatchDisplay->display(stopWatchString);
+    }
+    else
+    {
+        return;
+    }
 }
 
 void MainWindow::stopWatchInit()
 {
     m_playwatch= false;
-    ui->StopwatchDisplay->setSegmentStyle(QLCDNumber::Filled);
-    ui->StopwatchDisplay->setDigitCount(6);
+    QString temp="00:00:00";
+    m_stopwatchseconds=0;
+    m_stopwatchminutes=59;
+    m_stopwatchhours=0;
 
+    ui->StopwatchDisplay->setSegmentStyle(QLCDNumber::Filled);
+    ui->StopwatchDisplay->setDigitCount(10);
+    ui->StopwatchDisplay->display(temp);
     connect (timer, SIGNAL (timeout ()), this, SLOT (updateStopwatch()));
 }
 

@@ -12,7 +12,6 @@
 #include <QPushButton>
 #include <QTime>
 #include <QTimer>
-#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -212,6 +211,7 @@ private:
     int m_stopwatchseconds;
     int m_stopwatchminutes;
     int m_stopwatchhours;
+    QString stopWatchString;
 
 };
 
