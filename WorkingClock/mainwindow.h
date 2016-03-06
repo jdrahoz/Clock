@@ -12,6 +12,7 @@
 #include <QPushButton>
 #include <QTime>
 #include <QTimer>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +33,12 @@ public:
 
 private slots:
 
+
+    void playStopwatch();
+    void pauseStopwatch();
+    void resetStopwatch();
+    void updateStopwatch();
+    void stopWatchInit();
 
     // EVENT HANDLERS
     void playTimer();
@@ -199,6 +206,13 @@ private:
 
     int m_month;
     int m_day;
+
+    //stopwatch variables
+    bool m_playwatch;
+    int m_stopwatchseconds;
+    int m_stopwatchminutes;
+    int m_stopwatchhours;
+
 };
 
 #endif // MAINWINDOW_H

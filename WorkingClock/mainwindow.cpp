@@ -24,6 +24,7 @@ MainWindow::MainWindow (QWidget *parent) :
 
     clockInit ();
     timerInit ();
+    stopWatchInit();
     timer -> start (1000);
 
     // create the button
@@ -55,6 +56,12 @@ MainWindow::MainWindow (QWidget *parent) :
     connect(ui->resetButtonTimer, SIGNAL (released()), this, SLOT (resetTimer()));
     connect(ui->pauseButtonTimer, SIGNAL (released()), this, SLOT (pauseTimer()));
     connect(ui->playButtonTimer, SIGNAL (released()), this, SLOT (playTimer()));
+
+    //connecting buttons for the stopwatch
+    connect(ui->startButtonStopwatch, SIGNAL (released()), this, SLOT (playStopwatch()));
+    connect(ui->stopButtonStopwatch, SIGNAL (released()), this, SLOT (pauseStopwatch()));
+    connect(ui->resetButtonStopwatch, SIGNAL (released()), this, SLOT (resetStopwatch()));
+
 }
 
 MainWindow::~MainWindow ()
@@ -68,6 +75,38 @@ MainWindow::~MainWindow ()
 // --------------------------------------------------------------------
 // ------------------------------- INIT -------------------------------
 // --------------------------------------------------------------------
+
+void MainWindow::playStopwatch()
+{
+    m_playwatch=true;
+}
+
+void MainWindow::pauseStopwatch()
+{
+    m_playwatch=false;
+}
+
+void MainWindow::resetStopwatch()
+{
+    m_stopwatchseconds=0;
+    m_stopwatchminutes=0;
+    m_stopwatchhours=0;
+}
+
+void MainWindow::updateStopwatch()
+{
+
+}
+
+void MainWindow::stopWatchInit()
+{
+    m_playwatch= false;
+    ui->StopwatchDisplay->setSegmentStyle(QLCDNumber::Filled);
+    ui->StopwatchDisplay->setDigitCount(6);
+
+    connect (timer, SIGNAL (timeout ()), this, SLOT (updateStopwatch()));
+}
+
 
 //continues the timer
 void MainWindow::playTimer()
