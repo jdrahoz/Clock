@@ -31,7 +31,7 @@
      <rect>
       <x>-10</x>
       <y>0</y>
-      <width>1241</width>
+      <width>1461</width>
       <height>711</height>
      </rect>
     </property>
@@ -893,15 +893,15 @@
        <rect>
         <x>49</x>
         <y>49</y>
-        <width>571</width>
-        <height>591</height>
+        <width>711</width>
+        <height>631</height>
        </rect>
       </property>
       <widget class="QSpinBox" name="spinBoxHr">
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -911,7 +911,7 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -921,7 +921,7 @@
        <property name="geometry">
         <rect>
          <x>250</x>
-         <y>530</y>
+         <y>580</y>
          <width>54</width>
          <height>29</height>
         </rect>
@@ -931,7 +931,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>530</y>
+         <y>580</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -944,7 +944,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>480</y>
+         <y>530</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -957,7 +957,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>430</y>
+         <y>480</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -970,7 +970,7 @@
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>380</y>
+         <y>430</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1007,14 +1007,14 @@
        <rect>
         <x>620</x>
         <y>50</y>
-        <width>621</width>
+        <width>831</width>
         <height>591</height>
        </rect>
       </property>
       <widget class="QLCDNumber" name="StopwatchDisplay">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>150</x>
          <y>150</y>
          <width>521</width>
          <height>211</height>
@@ -1036,8 +1036,8 @@
       <widget class="QPushButton" name="startButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>370</y>
+         <x>510</x>
+         <y>420</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1049,8 +1049,8 @@
       <widget class="QPushButton" name="resetButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>470</y>
+         <x>510</x>
+         <y>520</y>
          <width>90</width>
          <height>31</height>
         </rect>
@@ -1062,8 +1062,8 @@
       <widget class="QPushButton" name="stopButtonStopwatch">
        <property name="geometry">
         <rect>
-         <x>390</x>
-         <y>420</y>
+         <x>510</x>
+         <y>470</y>
          <width>90</width>
          <height>31</height>
         </rect>
