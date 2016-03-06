@@ -1,0 +1,9 @@
+/** \page Tabs
+
+!!! Configuration options related to which tabs are shown.
+
+
+
+||DIR_TAB_SHOW_GLOBALS|Whether to show the Globals tab on directory pages\n #Default value:#\n $YES$
+||DIR_TAB_SHOW_GROUPS|Whether to show the Groups tab on directory pages\n #Default value:#\n $YES$
+*/

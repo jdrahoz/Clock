@@ -1,0 +1,14 @@
+/** \page Treeview
+
+!!! Configuration options related to left menu treeview.
+
+
+
+||TREE_VIEW_FOLDER_FOR_CLASSES|If true classes get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_STRUCTS|If true structs get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_UNITS|If true units get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_FUNCTIONS|If true functions get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_FUNCTION_POINTERS|If true function pointers get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_GROUPS|If true groups get their own folder on the treeview.\n #Default value:#\n $YES$
+||TREE_VIEW_FOLDER_FOR_PAGES|If true pages get their own folder on the treeview.\n #Default value:#\n $YES$
+*/

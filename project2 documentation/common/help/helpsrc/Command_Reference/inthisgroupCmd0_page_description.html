@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>HELP - inthisgroupCmd</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "../../common/";
+  var relPathToHelpDir = "../../common/help/";
+</script>
+<script type="text/javascript" src="../../common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','../../search";
+  Body1();
+</script>
+<div class="headerPage">HELP - inthisgroupCmd</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Help</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','CommandReference0',this)" class="pathLink">Command Reference</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">inthisgroupCmd</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID332","aID332","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','inthisgroupCmd0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="padding"><div class="userParagraph1"> Add an etity to this group.</div>
+This command is used in the documentation block of a group to add members and/or to specify the desired order of the members. See all <a href="#" OnMouseOver="link('_page','defgroupCmd0',this)">defgroupCmd</a>.<br>
+<br>
+</div>
+<div class="padding">Syntax:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+\inthisgroup myFun
+\inthisgroup "Group name with spaces"
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+<div class="padding"><div class="userParagraph2"> Order of groups and group members</div>
+If you choose to use groups you may want to be able to specify a non alphabetized order (default) for the group members. This can be done by setting the config option <code>SORT_GROUP_MEMBERS = NO</code> which causes the group members to be ordered in the same order as they appear in the source files. In case this order is not what you want you can also use the \inthisgroup (<a href="#" OnMouseOver="link('_page','inthisgroupCmd0',this)">inthisgroupCmd</a>) to specify the order of the members.<br>
+</div>
+<div class="paragraph2">See also</div>
+<div id="descSee" class="paddingMembers"><LI><a href="#" OnMouseOver="link('_page','defgroupCmd0',this)">defgroupCmd</a>, <a href="#" OnMouseOver="link('_page','ingroupCmd0',this)">ingroupCmd</a> <br>
+</div>
+<div class="paragraph2"><span id="descExampExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descExampColSpan' );javascript:hideElement( 'descExampExpSpan' );javascript:showElement( 'descExamp' );javascript:setMyCookie( cookieName, 'descExamp', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="descExampColSpan"><a href="javascript:showElement( 'descExampExpSpan' );javascript:hideElement( 'descExampColSpan' );javascript:hideElement( 'descExamp' );javascript:setMyCookie( cookieName, 'descExamp', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+Examples</div>
+<div id="descExamp" class="paddingMembersTableDiv"><div id='examplesTabs'>
+<ul>
+<li><a href='#examplesTabs-1'>Example 1</a></li>
+</ul>
+<div id='examplesTabs-1'>  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+/**
+\defgroup "My own order functions"
+Group of string functions.
+The utility functions ... bla bla ...
+\inthisgroup writeToFile
+\inthisgroup stringFind
+\inthisgroup stringCopy
+\inthisgroup stringCompare
+*/
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+$(function() {
+$('#examplesTabs').tabs();
+});
+</script>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

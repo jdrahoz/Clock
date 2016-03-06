@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<TITLE>DefaultProjectName - MainWindow</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "../common/";
+  var relPathToHelpDir = "../common/help/";
+</script>
+<script type="text/javascript" src="../common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','../search";
+  Body1();
+</script>
+<div class="headerPage">MainWindow</div>
+<div class="path"><a href="#" OnMouseOver="link('','../index',this)" class="pathLink">Default mainpage</A><img src="../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','doxys_1_15_win_bin0',this)" class="pathLink">doxys_1_15_win_bin</A><img src="../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_class','MainWindow0',this)" class="pathLink">MainWindow</A><img src="../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">MainWindow</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_member','MainWindow451877822','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_member','MainWindow451877822','_source',this)" class="tabLinkActive">Source</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Call Graph</span></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<div class="paragraph2NoTopPadding">Start Line: 19</div>
+<pre class="codeExamples">
+ <a href="#" onMouseOver="link('_member','MainWindow451877822',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>MainWindow&nbsp;&nbsp;(QWidget * parent)',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">MainWindow::MainWindow</a>(QWidget *parent=0)
+                                       :
+    QMainWindow (parent),
+    <a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a> (new Ui::<a href="#" onMouseOver="link('_class','MainWindow0',this); overLibDiagram();return overlib('<strong>Public Member Functions</strong><BR>MainWindow<br>~MainWindow<br>',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">MainWindow</a>)
+{
+
+    <a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a> -&gt; setupUi (this);
+
+    <a href="#" onMouseOver="link('_member','clockInit235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;clockInit&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>INIT.  initialize digital display');" onMouseOut="return nd();">clockInit</a> ();
+    <a href="#" onMouseOver="link('_member','timerInit235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;timerInit&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>intialize timer');" onMouseOut="return nd();">timerInit</a> ();
+    <a href="#" onMouseOver="link('_member','stopWatchInit235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;stopWatchInit&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>initialize stopwatch variables, connections, and ui properties');" onMouseOut="return nd();">stopWatchInit</a>();
+    <a href="#" onMouseOver="link('_member','timer210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>QTimer *&nbsp;&nbsp;timer ',CAPTION,'<strong>Brief description</strong><BR>0= am, 1= pm');" onMouseOut="return nd();">timer</a> -&gt; start (1000);
+
+    <a href="#" onMouseOver="link('_member','m_zoomIn210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>QPushButton *&nbsp;&nbsp;m_zoomIn ',CAPTION,'<strong>Brief description</strong><BR>prototype button additions');" onMouseOut="return nd();">m_zoomIn</a> = new QPushButton("Zoom In", this);
+    <a href="#" onMouseOver="link('_member','m_zoomIn210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>QPushButton *&nbsp;&nbsp;m_zoomIn ',CAPTION,'<strong>Brief description</strong><BR>prototype button additions');" onMouseOut="return nd();">m_zoomIn</a>-&gt;setGeometry(QRect(QPoint(100, 100),
+    QSize(200, 50)));
+    connect(m_zoomIn, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','on_zoomIn_clicked235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;on_zoomIn_clicked&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>Prototyping for new UI functionality');" onMouseOut="return nd();">on_zoomIn_clicked</a>()));
+
+    <a href="#" onMouseOver="link('_member','m_zoomOut210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>QPushButton *&nbsp;&nbsp;m_zoomOut ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">m_zoomOut</a> = new QPushButton("Zoom Out", this);
+    <a href="#" onMouseOver="link('_member','m_zoomOut210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>QPushButton *&nbsp;&nbsp;m_zoomOut ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">m_zoomOut</a>-&gt;setGeometry(QRect(QPoint(500, 100),
+    QSize(200, 50)));
+    connect(m_zoomOut, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','on_zoomOut_clicked235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;on_zoomOut_clicked&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">on_zoomOut_clicked</a>()));
+
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxHr, SIGNAL (released()), this, SLOT ());
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxMin, SIGNAL (released()), this, SLOT ());
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxSec, SIGNAL (released()), this, SLOT ());
+
+    <a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxHr-&gt;setRange(0, 23);
+    <a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxMin-&gt;setRange(0, 59);
+    <a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;spinBoxSec-&gt;setRange(0, 59);
+
+    <a href="#" onMouseOver="link('_member','startedTimer210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>bool&nbsp;&nbsp;startedTimer ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">startedTimer</a> = false;
+
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;startButtonTimer, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','startTimer235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;startTimer&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>starts the timer');" onMouseOut="return nd();">startTimer</a>()));
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;resetButtonTimer, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','resetTimer235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;resetTimer&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>resets the timer and the inputs');" onMouseOut="return nd();">resetTimer</a>()));
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;pauseButtonTimer, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','pauseTimer235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;pauseTimer&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>pauses the timer');" onMouseOut="return nd();">pauseTimer</a>()));
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;playButtonTimer, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','playTimer235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;playTimer&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>continues the timer');" onMouseOut="return nd();">playTimer</a>()));
+
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;startButtonStopwatch, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','playStopwatch235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;playStopwatch&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>EVENT HANDLERS. tells the stopwatch to continue advancing its count');" onMouseOut="return nd();">playStopwatch</a>()));
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;stopButtonStopwatch, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','pauseStopwatch235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;pauseStopwatch&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>tells the stopwatch to stop advancing its count');" onMouseOut="return nd();">pauseStopwatch</a>()));
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;resetButtonStopwatch, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','resetStopwatch235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;resetStopwatch&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>resets the stopwatch at 0:0:0');" onMouseOut="return nd();">resetStopwatch</a>()));
+
+    connect(<a href="#" onMouseOver="link('_member','ui210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>Ui::MainWindow *&nbsp;&nbsp;ui ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">ui</a>-&gt;calendarButton, SIGNAL (released()), this, SLOT (<a href="#" onMouseOver="link('_member','writeCalendarString235329877',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;writeCalendarString&nbsp;&nbsp;()',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">writeCalendarString</a>()));
+
+    <a href="#" onMouseOver="link('_member','m_calendarInitialized210163975',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>bool&nbsp;&nbsp;m_calendarInitialized ',CAPTION,'<strong>Brief description</strong><BR>');" onMouseOut="return nd();">m_calendarInitialized</a>=false;
+}
+
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_member','_source');
+</script>

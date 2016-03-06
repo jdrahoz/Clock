@@ -1,12 +1,15 @@
 /**
 *	@file mainwindow.h
 * 	@author Quinten Wiley, Julia Drahozal, Omar Alzubbi, Kate Strombom
-*	@date 2016.02.12
+*       edited by Austin Bailey, Tim Elvart, Will Teeple, Michael Wang
+*	@date 2016.02.12 created
+*         2016.03.06 edited last
 */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 #include <QTime>
 #include <QTimer>
 
@@ -29,9 +32,84 @@ public:
 
 private slots:
 
+    //EVENT HANDLERS
 
-    // EVENT HANDLERS
+    void playStopwatch();
+    /**
+     * @pre none
+     * @post tells the stopwatch to start advancing again
+     * @return none
+     */
+    void pauseStopwatch();
+    /**
+     * @pre none
+     * @post pauses the stopwatch advancement
+     * @return none
+     */
+    void resetStopwatch();
+    /**
+     * @pre none
+     * @post the stopwatch is reset to 0:0:0 and paused
+     * @return none
+     */
+    void updateStopwatch();
+    /**
+     * @pre none
+     * @post called after 1 second has passed in system timer.
+     *  updates according member variables and displays the current time count
+     * @return none
+     */
+    void stopWatchInit();
+    /**
+     * @pre none
+     * @post stopwatch member variables are initialized, QT ui connections established. "0:0:0" is displayed
+     * @return none
+     */
+    void playTimer();
+    /**
+       *  @pre none
+       *  @post continues the timer
+       *  @return none
+       */
+    void pauseTimer();
+    /**
+       *  @pre none
+       *  @post pauses the timer
+       *  @return none
+       */
+    void timerDone();
+    /**
+       *  @pre none
+       *  @post outputs a 0 to the string
+       *  @return none
+       */
+    void updateTimer();
+    /**
+       *  @pre none
+       *  @post updates the timer
+       *  @return none
+       */
+    void goodTimerInput();
+    /**
+       *  @pre none
+       *  @post checks the spinboxes for valid input
+       *  @return none
+       */
+    void resetTimer();
+    /**
+       *  @pre none
+       *  @post resets the timerdisplay and function to 0
+       *  @return none
+       */
+    void startTimer();
+    /**
+       *  @pre none
+       *  @post starts the timer
+       *  @return none
+       */
 
+    //bool calIsValidInput();
+    //void wrapDayAtMidnight();
 
     void on_update_clicked();
     /**
@@ -43,6 +121,19 @@ private slots:
     /**
        *  @pre none
        *  @post Time displayed is reverted to 0000000
+       *  @return none
+       */
+    void on_zoomIn_clicked();
+    /**
+       *  @pre none
+       *  @post Zooms in on display (increases widget size)
+       *  @return none
+       */
+
+    void on_zoomOut_clicked();
+    /**
+       *  @pre none
+       *  @post Zooms out of display (decreases widget size)
        *  @return none
        */
 
@@ -104,6 +195,26 @@ private slots:
        *  @return true if input is only integers within bounds
        */
 
+    void wrapDayAtMidnight();
+    /**
+      *  @pre date set;
+      *  @post changes m_month and m_day accordingly
+      *  @return void
+      */
+
+    bool calIsValidInput();
+    /**
+      * @pre inputs in calendar textboxes
+      * @post ensures that inputs are valid
+      * @return True if valid false else
+      */
+
+    void writeCalendarString();
+    /**
+      * @pre month/day data set properly
+      * @post outputs a string to textbox
+      * @return void
+      */
 private:
     Ui::MainWindow *ui;
 
@@ -112,6 +223,34 @@ private:
     int currMode; // 0= 24, 1= 12
     int ampm; // 0= am, 1= pm
     QTimer* timer;
+
+    //prototype button additions
+    QPushButton *m_zoomIn;
+    QPushButton *m_zoomOut;
+    QPushButton *m_startTimer;
+
+    //additional timer variables
+    int hrTime;
+    int minTime;
+    int secTime;
+    int hrValue;
+    int minValue;
+    int secValue;
+    int nowTime;
+    bool bPauseTime;
+    bool startedTimer;
+
+    //calendar variables
+    int m_month;
+    int m_day;
+    bool m_calendarInitialized;
+
+    //stopwatch variables
+    bool m_playwatch;
+    int m_stopwatchseconds;
+    int m_stopwatchminutes;
+    int m_stopwatchhours;
+    QString m_stopWatchString;
 
 };
 

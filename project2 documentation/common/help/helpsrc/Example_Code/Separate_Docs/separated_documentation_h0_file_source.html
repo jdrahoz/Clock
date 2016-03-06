@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>HELP - separated_documentation.h</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "../../../common/";
+  var relPathToHelpDir = "../../../common/help/";
+</script>
+<script type="text/javascript" src="../../../common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="../../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','../../../search";
+  Body1();
+</script>
+<div class="headerPage">HELP - separated_documentation.h</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../../index',this)" class="pathLink">Help</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','../ExampleCode0',this)" class="pathLink">Example Code</A><img src="../../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','SeparateDocs0',this)" class="pathLink">Separate Docs</A><img src="../../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">separated_documentation.h</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_file','separated_documentation_h0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_file','separated_documentation_h0','_overview',this)" class="tabLinkInActive">Overview</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Included files</span></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Included by</span></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_file','separated_documentation_h0','_source',this)" class="tabLinkActive">Source</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<pre class="codeExamples">
+#ifndef _SEPARATED_DOCUMENTATION_H_
+#define _SEPARATED_DOCUMENTATION_H_
+
+
+#define DEFINE    12
+
+#define MACRO(x,y) { printf("(%d, %d)\n", x, y); }
+
+
+typedef int <a href="#" onMouseOver="link('_member','TypeDef0',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>int&nbsp;&nbsp;TypeDef ',CAPTION,'<strong>Brief description</strong><BR>TypeDef brief SEPARATE DOC.');" onMouseOut="return nd();">TypeDef</a>;
+
+int     <a href="#" onMouseOver="link('_member','FreeFunction60979',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>int&nbsp;&nbsp;FreeFunction&nbsp;&nbsp;(int iInt)',CAPTION,'<strong>Brief description</strong><BR>FreeFunction brief SEPARATE DOC.');" onMouseOut="return nd();">FreeFunction</a>(int iInt);
+
+
+
+
+namespace SepDocNamespace
+{
+  void  <a href="#" onMouseOver="link('_member','NamespaceFunction163696211',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;NamespaceFunction&nbsp;&nbsp;(int iInt)',CAPTION,'<strong>Brief description</strong><BR>SepDocNamespace::NamespaceFunction function brief SEPARATE DOC.');" onMouseOut="return nd();">NamespaceFunction</a>(int iInt);
+
+  class NamespaceClass
+  {
+    public:
+      void  <a href="#" onMouseOver="link('_member','ClassFunction2107887077',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ClassFunction&nbsp;&nbsp;(int iInt) const',CAPTION,'<strong>Brief description</strong><BR>SepDocNamespace::NamespaceClass::ClassFunction brief SEPARATE DOC.');" onMouseOut="return nd();">ClassFunction</a>(int iInt) const;
+  };
+
+}
+
+ 
+class <a href="#" onMouseOver="link('_class','SepDocClass0',this); overLibDiagram();return overlib('<strong>Public Member Functions</strong><BR>ClassFunction<br>ClassTemplateFunction<><br>',CAPTION,'<strong>Brief description</strong><BR>SepDocClass brief SEPARATE DOC.');" onMouseOut="return nd();">SepDocClass</a>
+{
+  public:
+    void  <a href="#" onMouseOver="link('_member','ClassFunction2566566765',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ClassFunction&nbsp;&nbsp;(int iInt) const',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::ClassFunction brief SEPARATE DOC.');" onMouseOut="return nd();">ClassFunction</a>(int iInt) const;
+
+    template &lt;class T1, class T2&gt;
+    void  <a href="#" onMouseOver="link('_member','ClassTemplateFunction2786629517',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>void&nbsp;&nbsp;ClassTemplateFunction&nbsp;&nbsp;(int iInt)',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::ClassTemplateFunction brief SEPARATE DOC.');" onMouseOut="return nd();">ClassTemplateFunction</a>(int iInt)
+    {
+      cout&lt;&lt;"ClassTemplateFunction(int)\n";
+    }
+
+    int     <a href="#" onMouseOver="link('_member','m_iClassVariable179590647',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>int&nbsp;&nbsp;m_iClassVariable ',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::m_iClassVariable brief SEPARATE DOC.');" onMouseOut="return nd();">m_iClassVariable</a>;
+
+    enum    <a href="#" onMouseOver="link('_member','ClassEnum179590647',this); overLibDiagram();return overlib('<strong>Enumeration Values</strong><BR>eClassEnumVal1<br>eClassEnumVal2<br>',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::ClassEnum brief SEPARATE DOC.');" onMouseOut="return nd();">ClassEnum</a> { <a href="#" onMouseOver="link('_member','eClassEnumVal1179590647',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>enumval&nbsp;&nbsp;eClassEnumVal1',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::eClassEnumVal1 brief SEPARATE DOC.');" onMouseOut="return nd();">eClassEnumVal1</a>, <a href="#" onMouseOver="link('_member','eClassEnumVal2179590647',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>enumval&nbsp;&nbsp;eClassEnumVal2',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::eClassEnumVal2 brief SEPARATE DOC.');" onMouseOut="return nd();">eClassEnumVal2</a> };
+    
+    union ClassUnion
+    {
+      int     <a href="#" onMouseOver="link('_member','m_iClassUnionIntMember464580851',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>int&nbsp;&nbsp;m_iClassUnionIntMember ',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::ClassUnion::m_iClassUnionIntMember brief SEPARATE DOC.');" onMouseOut="return nd();">m_iClassUnionIntMember</a>;
+      float   <a href="#" onMouseOver="link('_member','m_iClassUnionFloatMember464580851',this); overLibDiagram();return overlib('<strong>Syntax</strong><BR>float&nbsp;&nbsp;m_iClassUnionFloatMember ',CAPTION,'<strong>Brief description</strong><BR>SepDocClass::ClassUnion::m_iClassUnionFloatMember brief SEPARATE DOC.');" onMouseOut="return nd();">m_iClassUnionFloatMember</a>;
+    };
+
+
+};
+
+
+
+#endif
+
+</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_file','_source');
+</script>

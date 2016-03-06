@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>HELP - ingroupCmd.page</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "../../common/";
+  var relPathToHelpDir = "../../common/help/";
+</script>
+<script type="text/javascript" src="../../common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','../../search";
+  Body1();
+</script>
+<div class="headerPage">HELP - ingroupCmd.page</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Help</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','CommandReference0',this)" class="pathLink">Command Reference</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">ingroupCmd.page</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("","","","");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabInActive"><a href="#" OnMouseOver="linkTab('_file','ingroupCmd_page0','_description',this)" class="tabLinkInActive">Description</a></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Overview</span></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Included files</span></span>
+<span class="tabInActiveGrayout"><span class="tabLinkGrayout">Included by</span></span>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_file','ingroupCmd_page0','_source',this)" class="tabLinkActive">Source</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<div class="contentAirTop"></div>
+<pre class="codeExamples">
+/** 
+\page ingroupCmd 
+!!! Add this entity to a group.
+This command is used in the documentation block of any entity to 
+designate a group it should be a meber of. It's possible to add an etity 
+to more than one group. 
+
+Syntax:
+\code
+\ingroup MyGroup
+\ingroup "Group name with spaces"
+\endcode
+
+\see defgroupCmd, inthisgroupCmd
+
+\example
+/**
+\defgroup "Util Functions"
+Group of utility functions.
+The utility functions ... bla bla ...
+\endds_doc
+
+/**
+\defgroup "Other Functions"
+Group of other functions.
+The other functions ... bla bla ...
+\endds_doc
+
+/**
+Brief description utilFun1.
+Group of utility functions.
+The utilFun1 ... bla bla ...
+\ingroup "Util Functions"
+void utilFun1();
+\endds_doc
+
+/**
+Brief description utilFun2.
+Group of utility functions.
+The utilFun2 ... bla bla ...
+\ingroup "Util Functions"
+\ingroup "Other Functions"
+void utilFun2();
+\endds_doc
+
+\endexample
+
+*/</pre><div class="contentAirBottom"></div>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_file','_source');
+</script>

@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>HELP - ingroupCmd</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "../../common/";
+  var relPathToHelpDir = "../../common/help/";
+</script>
+<script type="text/javascript" src="../../common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="../../common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','../../search";
+  Body1();
+</script>
+<div class="headerPage">HELP - ingroupCmd</div>
+<div class="path"><a href="#" OnMouseOver="link('','../../index',this)" class="pathLink">Help</A><img src="../../common/path-arrow.gif" class="path-arrow"><a href="#" OnMouseOver="link('_dir','CommandReference0',this)" class="pathLink">Command Reference</A><img src="../../common/path-arrow.gif" class="path-arrow"><span class="pathNonLink">ingroupCmd</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID330","aID330","LeftMenuActive","leftMenuLinkActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_page','ingroupCmd0','_description',this)" class="tabLinkActive">Description</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+&nbsp;<br>
+<div class="padding"><div class="userParagraph1"> Add this entity to a group.</div>
+This command is used in the documentation block of any entity to designate a group it should be a meber of. It's possible to add an etity to more than one group.<br>
+<br>
+</div>
+<div class="padding">Syntax:<br>
+  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+\ingroup MyGroup
+\ingroup "Group name with spaces"
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+</div>
+<div class="paragraph2">See also</div>
+<div id="descSee" class="paddingMembers"><LI><a href="#" OnMouseOver="link('_page','defgroupCmd0',this)">defgroupCmd</a>, <a href="#" OnMouseOver="link('_page','inthisgroupCmd0',this)">inthisgroupCmd</a> <br>
+</div>
+<div class="paragraph2"><span id="descExampExpSpan" style="display:none;visibility:hidden"><a href="javascript:showElement( 'descExampColSpan' );javascript:hideElement( 'descExampExpSpan' );javascript:showElement( 'descExamp' );javascript:setMyCookie( cookieName, 'descExamp', 'show' );"><img src="../../common/expand.gif" border=0></a></span><span id="descExampColSpan"><a href="javascript:showElement( 'descExampExpSpan' );javascript:hideElement( 'descExampColSpan' );javascript:hideElement( 'descExamp' );javascript:setMyCookie( cookieName, 'descExamp', 'hide' );"><img src="../../common/collapse.gif" border=0></a></span>
+Examples</div>
+<div id="descExamp" class="paddingMembersTableDiv"><div id='examplesTabs'>
+<ul>
+<li><a href='#examplesTabs-1'>Example 1</a></li>
+</ul>
+<div id='examplesTabs-1'>  <table cellspacing=0 cellpadding=0 border=0 class="widthAndBorderMembers">
+  <TR VALIGN="top">
+  <TD class="paddingHeadMultiColumn2">
+<pre class="codeExamples">
+/**
+\defgroup "Util Functions"
+Group of utility functions.
+The utility functions ... bla bla ...
+*/
+
+/**
+\defgroup "Other Functions"
+Group of other functions.
+The other functions ... bla bla ...
+*/
+
+/**
+Brief description utilFun1.
+Group of utility functions.
+The utilFun1 ... bla bla ...
+\ingroup "Util Functions"
+void utilFun1();
+*/
+
+/**
+Brief description utilFun2.
+Group of utility functions.
+The utilFun2 ... bla bla ...
+\ingroup "Util Functions"
+\ingroup "Other Functions"
+void utilFun2();
+*/
+</pre>  </TD>
+  </TR>
+  </TABLE>
+<br>
+<br>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+$(function() {
+$('#examplesTabs').tabs();
+});
+</script>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_page','_description');
+</script>

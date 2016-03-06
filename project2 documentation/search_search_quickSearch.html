@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<TITLE>DefaultProjectName - Search</TITLE>
+<script type="text/javascript">
+  var relPathToCommmon = "common/";
+  var relPathToHelpDir = "common/help/";
+</script>
+<script type="text/javascript" src="common/jsdyn.js" language="JavaScript"></script>
+<script type="text/javascript" src="common/js.js" language="JavaScript"></script>
+<script type="text/javascript" src="leftmenu.js" language="JavaScript"></script>
+<script type="text/javascript">
+  var toSearchPage     = "_search','search";
+  Body1();
+</script>
+<div class="headerPage">Search</div>
+<div class="path"><span class="pathNonLink">Search</span></div>
+<script type="text/javascript">
+ Body2();
+ BodyLeftMenuStart();
+WriteLeftMenu("divID0","aID0","headerLeftMenuActive","leftMenuLinkHeadActive");
+ BodyLeftMenuEnd();
+ Body3();
+</script>
+<span class="tabActive"><a href="#" OnMouseOver="linkTab('_search','search','_quickSearch',this)" class="tabLinkActive">Quick search</a></span>
+<script type="text/javascript">
+ Body4();
+</script>
+<script language="JavaScript">
+translatorForName = "Name";
+translatorForBriefDes = "Brief description";
+translatorForParent = "Parent";
+</script>
+<div class="contentAirTop"></div><!-- Always put this in the top of a text pages -->
+<div class="padding"><table border=0 cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td>
+<div>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td align=left class="searchInfoText">
+Text</td>
+</tr>
+<tr valign=top>
+<td align=left>
+<input type="text" id="SearchString" onKeyPress="searchEnterCheck(event);" onkeyup="Search(false);" value=""><br><br>
+<input type="button" id="butSearch" onClick="Search(true);" value="Search">
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="searchOptionsSpace"></td>
+<td>
+<div>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td align=right class="searchInfoText">
+Fields&nbsp;</td>
+<td align=left class="searchOptionsSpace"></td>
+<td align=left class="searchInfoText">
+&nbsp;Entities</td>
+<tr valign=top align=left>
+<td align=right>
+Name<input type=checkbox id="chkName" onClick="Search(false);ToSearchCookie(this.id,this.checked);"><br>
+Brief<input type=checkbox id="chkBrief" onClick="Search(false);ToSearchCookie(this.id,this.checked);"><br>
+Keywords<input type=checkbox id="chkKeywords" onClick="Search(false);ToSearchCookie(this.id,this.checked);"></td>
+<td align=left></td>
+<td align=left>
+<input type=checkbox id="chkClass" onClick="Search(false);ToSearchCookie(this.id,this.checked);">Classes<br>
+<input type=checkbox id="chkMethod" onClick="Search(false);ToSearchCookie(this.id,this.checked);">Members<br>
+<input type=checkbox id="chkOthers" onClick="Search(false);ToSearchCookie(this.id,this.checked);">Others</td>
+</tr>
+</table>
+</div>
+</td>
+<td class="searchOptionsSpace"></td>
+<td>
+<div>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td align=left class="searchInfoText">
+&nbsp;Options</td>
+</td>
+</tr>
+<tr valign=top>
+<td align=left>
+<input type=checkbox id="chkIncSearch" onClick="Search(false);ToSearchCookie(this.id,this.checked);enableDisableSearchButton();">&nbsp;Incremental search<br>
+<table border=0 cellpadding=0 cellspacing=0><tr><td height=3></td></tr></table>
+<table border=0 cellpadding=0 cellspacing=0><tr><td valign=top>&nbsp;<input type="text" id="rowsNumber" maxlength=3 size=1 onkeyup="Search(false);ToSearchCookie(this.id,this.value);"></td><td>&nbsp;Number of Rows<br>&nbsp;(empty = Show all)</td></tr></table><br>
+<br>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<span id="OutputDiv">&nbsp;Loading Please wait...</span>
+<div class="contentAirBottom"></div><!-- Always put this in the bottom of all pages -->
+<span id="dataDiv">
+<script language="javascript">
+function addData()
+{
+arr_types = ["_class","_member","_file","_namespace","_page","_dir","_unit"];
+arr_dir = ["","doxys_1_15_win_bin"];
+arr_find = ["+","-","*","/","%","^","&","|","~","!","=","<",">","'","[","]","(",")"," ",",",":","\"","\\","?",".","@","#","$"];
+arr_replace = ["pl_","mi_","mu_","di_","mo_","si_","am_","pi_","ti_","ex_","eq_","le_","gr_","ap_","lb_","rb_","lp_","rp_","","co_","co_","qu_","bs_","qm_","_","at_","ha_","do_"];
+arr_array_of_arraynames = ["arr_directory_0","arr_class_0","arr_page_0","arr_unit_0","arr_namespace_0","arr_member_0","arr_file_0"];
+var OutputDiv = document.getElementById("OutputDiv");
+OutputDiv.innerHTML = "&nbsp;Loading Classes...";
+arr_class_0 = ["0",1,,"MainWindow","doxys_1_15_win_bin",""];
+OutputDiv.innerHTML = "&nbsp;Loading Members...";
+arr_member_0 = ["451877822",1,,"MainWindow","MainWindow","appropriate call connect create every fire init location signal slot slotconnnecting stopwatchconnecting timerconnecting ","210163975",1,"0= 24, 1= 12","ampm","MainWindow","","210163975",1,,"bPauseTime","MainWindow","","235329877",1,,"calIsValidInput","MainWindow","accordingly august boundsgets boundshandles calendarin calendarwrong caracter care changes character characterstodo checkchecks convert dayinput december ensures false form gets given handle handles inputthe invalid january july laterhandles m_day m_month march may need numberssets october part qstring return specified take text then where within witin wrong ","235329877",1,"INIT.  initialize digital display","clockInit","MainWindow","decreases midnight out widget zooms ","210163975",1,,"currMode","MainWindow","","210163975",1,"clock member variables","currTime","MainWindow","","235329877",1,"checks the inputs of the timer to see if it is valid","goodTimerInput","MainWindow","updates ","210163975",1,"additional timer variables","hrTime","MainWindow","","210163975",1,,"hrValue","MainWindow","","235329877",1,"check that clock input is valid","isValidInput","MainWindow","back big characters etc instead not numbers passed tests too wrong ","210163975",1,,"m_calendarInitialized","MainWindow","","210163975",1,,"m_day","MainWindow","","210163975",1,"calendar variables","m_month","MainWindow","","210163975",1,"stopwatch variables","m_playwatch","MainWindow","","210163975",1,,"m_startTimer","MainWindow","","210163975",1,,"m_stopWatchString","MainWindow","","210163975",1,,"m_stopwatchhours","MainWindow","","210163975",1,,"m_stopwatchminutes","MainWindow","","210163975",1,,"m_stopwatchseconds","MainWindow","","210163975",1,"prototype button additions","m_zoomIn","MainWindow","","210163975",1,,"m_zoomOut","MainWindow","","210163975",1,,"minTime","MainWindow","","210163975",1,,"minValue","MainWindow","","210163975",1,,"nowTime","MainWindow","","235329877",1,"RESET: clears the digital display","on_reset_clicked","MainWindow","changed clear options user ","235329877",1,"UPDATE: updates the digital display","on_update_clicked","MainWindow","ampm check checkboxes clear event handlers restart starts text ","235329877",1,"Prototyping for new UI functionality","on_zoomIn_clicked","MainWindow","black displayincrease edit file implemented main out reverted screen zoom ","235329877",1,,"on_zoomOut_clicked","MainWindow","displaydecrease edit increases main widget zooms ","235329877",1,"tells the stopwatch to stop advancing its count","pauseStopwatch","MainWindow","advancing again start tells ","235329877",1,"pauses the timer","pauseTimer","MainWindow","continues ","235329877",1,"EVENT HANDLERS. tells the stopwatch to continue advancing its count","playStopwatch","MainWindow","init ","235329877",1,"continues the timer","playTimer","MainWindow","0:0:0 are connections established initialized member variables ","235329877",1,"resets the stopwatch at 0:0:0","resetStopwatch","MainWindow","advancement pauses ","235329877",1,"resets the timer and the inputs","resetTimer","MainWindow","checks spinboxes ","210163975",1,,"secTime","MainWindow","","210163975",1,,"secValue","MainWindow","","2651347387",1,"change currMode to new mode","setMode","MainWindow","newtime ","3725023704",1,"CLOCK METHODS.  change currTime to new time","setTime","MainWindow","shown ","235329877",1,"shows time on digital display","showTime","MainWindow","format methods newmode ","235329877",1,"starts the timer","startTimer","MainWindow","connects function resets system this timerdisplay ","210163975",1,,"startedTimer","MainWindow","","235329877",1,"initialize stopwatch variables, connections, and ui properties","stopWatchInit","MainWindow","according after called count current displays has member passed second system updates variables ","210163975",1,"0= am, 1= pm","timer","MainWindow","","235329877",1,"displays a single zero if the timer is done","timerDone","MainWindow","pauses ","235329877",1,"intialize timer","timerInit","MainWindow","call every hits show shown ","210163975",1,,"ui","MainWindow","data outputs properly textbox ","235329877",1,"update ampm to reflect new time","updateAMPM","MainWindow","add ampm current second toggle ","235329877",1,"advances time in the stopwatch and displays it","updateStopwatch","MainWindow","paused ","235329877",1,"update currTime by one second","updateTime","MainWindow","","235329877",1,"updates the timer","updateTimer","MainWindow","outputs ","235329877",1,"in 12 hour mode, wrap for pm and midnight","wrap12hour","MainWindow","midnight midnightaddittion noon past rolls status ","235329877",1,,"wrapDayAtMidnight","MainWindow","calendaredit cases days dayson debugginghandles december end feb got here have incriments just long monthhandles months not other samespecific settext stays these where wrapscase year ","235329877",1,,"writeCalendarString","MainWindow","approach are brute convert debugging ensures etc force fridayafter inputs m_month monday myqstring online qstring represents searching sunday textboxes tuesday usedqstring was wednesday ","235329877",1,,"~MainWindow","MainWindow","","2668469848",1,,"main","doxys_1_15_win_bin",""];
+OutputDiv.innerHTML = "&nbsp;Loading Files...";
+arr_file_0 = ["0",1,,"mainwindow.cpp","doxys_1_15_win_bin","created edited last ","0",1,,"mainwindow.h","doxys_1_15_win_bin","created edited last ","0",1,,"main.cpp","doxys_1_15_win_bin",""];
+OutputDiv.innerHTML = "&nbsp;Loading Namespaces...";
+arr_namespace_0 = ["0",1,,"Ui","doxys_1_15_win_bin",""];
+OutputDiv.innerHTML = "&nbsp;Loading Pages...";
+arr_page_0 = [];
+OutputDiv.innerHTML = "&nbsp;Loading Directories...";
+arr_directory_0 = ["0",1,,"doxys_1_15_win_bin","Default mainpage","autogenerated page "];
+OutputDiv.innerHTML = "&nbsp;Loading Units...";
+arr_unit_0 = [];
+OutputDiv.innerHTML = "&nbsp;Ready";
+}
+</script>
+</span>
+<script language="JavaScript">
+init();
+</script>
+<script type="text/javascript">
+ Body5();
+Statistics("","","","","");
+ Body6();
+SetPageTab('_search','_quickSearch');
+</script>

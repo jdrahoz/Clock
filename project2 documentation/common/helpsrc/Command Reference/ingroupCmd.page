@@ -1,0 +1,48 @@
+/** 
+\page ingroupCmd 
+!!! Add this entity to a group.
+This command is used in the documentation block of any entity to 
+designate a group it should be a meber of. It's possible to add an etity 
+to more than one group. 
+
+Syntax:
+\code
+\ingroup MyGroup
+\ingroup "Group name with spaces"
+\endcode
+
+\see defgroupCmd, inthisgroupCmd
+
+\example
+/**
+\defgroup "Util Functions"
+Group of utility functions.
+The utility functions ... bla bla ...
+\endds_doc
+
+/**
+\defgroup "Other Functions"
+Group of other functions.
+The other functions ... bla bla ...
+\endds_doc
+
+/**
+Brief description utilFun1.
+Group of utility functions.
+The utilFun1 ... bla bla ...
+\ingroup "Util Functions"
+void utilFun1();
+\endds_doc
+
+/**
+Brief description utilFun2.
+Group of utility functions.
+The utilFun2 ... bla bla ...
+\ingroup "Util Functions"
+\ingroup "Other Functions"
+void utilFun2();
+\endds_doc
+
+\endexample
+
+*/
